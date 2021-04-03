@@ -15,4 +15,13 @@ public class TimePeriod {
         this.startTimeMinute = startTimeMinute;
         this.durationMins = durationMins;
     }
+
+    public void printDetails(){
+        System.out.println(
+                "Week: " + week +
+                        "Day: " + day +
+                        "Time: " + startTimeHour + ":" + startTimeMinute +
+                        "Duration: " + durationMins + " mins"
+        );
+    }
 }

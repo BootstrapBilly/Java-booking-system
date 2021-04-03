@@ -8,4 +8,12 @@ public class Entity {
         this.ID = ID;
         this.name = name;
     }
+
+    public String getID() {
+        return ID;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

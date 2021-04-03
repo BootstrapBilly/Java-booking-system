@@ -15,4 +15,11 @@ public class Booking {
         this.lesson = lesson;
         this.status = status;
     }
+
+    public void printDetails(){
+        System.out.println("Booking #" + this.ID);
+        System.out.println("\nStudent: \n"); this.student.printDetails();
+        System.out.println("\nLesson: \n"); this.lesson.printDetails();
+        System.out.println("\nStatus: " + this.status.getStatus());
+    }
 }
