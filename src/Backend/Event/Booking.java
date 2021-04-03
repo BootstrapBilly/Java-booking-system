@@ -3,6 +3,8 @@ package Backend.Event;
 import Backend.Lesson.Lesson;
 import Backend.User.Student;
 
+import java.util.Optional;
+
 public class Booking {
     private String ID;
     private Student student;
@@ -21,5 +23,9 @@ public class Booking {
         System.out.println("\nStudent: \n"); this.student.printDetails();
         System.out.println("\nLesson: \n"); this.lesson.printDetails();
         System.out.println("\nStatus: " + this.status.getStatus());
+    }
+
+    public void updateStatus(Status status){
+        this.status = status;
     }
 }
