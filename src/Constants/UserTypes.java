@@ -1,10 +1,8 @@
 package Constants;
 
-public final class Constants {
+public final class UserTypes {
 
-    private Constants() {
-        // restrict instantiation
-    }
+    private UserTypes() {}
 
     public static final String STUDENT = "Student";
     public static final String PARENT = "Parent";

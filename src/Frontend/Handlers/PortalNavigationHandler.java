@@ -1,6 +1,7 @@
 package Frontend.Handlers;
 
 import Backend.User.User;
+import Constants.Routes;
 import Data.Observer.Session.SessionManager;
 import Data.Singleton.Router;
 import Data.Singleton.Session;
@@ -16,7 +17,6 @@ public class PortalNavigationHandler implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         String userType = ((JButton) e.getSource()).getName();
-//        System.out.println(userType);
 
         SessionManager session = Session.getInstance();
 
@@ -24,9 +24,8 @@ public class PortalNavigationHandler implements ActionListener {
 
         session.login(user);
 
-
         Router appRouter = Router.getInstance();
-        appRouter.calculateRoute();
+        appRouter.setRoute(Routes.USER_SELECT);
     }
 
 }

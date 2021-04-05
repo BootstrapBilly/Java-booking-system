@@ -1,5 +1,6 @@
 package Data.Singleton;
 
+import Constants.Routes;
 import Data.Observer.JFrame.JFrameManager;
 import Data.Observer.Session.SessionManager;
 import Frontend.Login.LoginScreen;
@@ -9,6 +10,7 @@ import javax.swing.*;
 public class Router {
 
     private static javax.swing.JFrame appContainer;
+    private static String currentRoute;
 
     private static Router uniqueInstance;
 
@@ -21,26 +23,35 @@ public class Router {
             JFrameManager app = Data.Singleton.JFrame.getInstance();
             appContainer = app.getJFrame();
 
+            currentRoute = Routes.LOGIN;
+
             uniqueInstance = router;
         }
         return uniqueInstance;
     }
 
     public void calculateRoute(){
-        SessionManager session = Session.getInstance();
+        JComponent content = null;
 
-        if(session.getSession() == null){
-            LoginScreen loginScreen = new LoginScreen();
-            appContainer.add(loginScreen.component());
-        } else {
-            JPanel panel = new JPanel();
-            JLabel label = new JLabel("hi");
+        switch (currentRoute){
+            case Routes.LOGIN:
+                LoginScreen loginScreen = new LoginScreen();
+                content = loginScreen.component();
+                break;
+            case Routes.USER_SELECT:
+                JPanel panel = new JPanel();
+                JLabel label = new JLabel("hi");
 
-            panel.add(label);
-
-            appContainer.setContentPane(panel);
-            appContainer.revalidate();
-
+                panel.add(label);
+                content = panel;
+                break;
         }
+        appContainer.setContentPane(content);
+        appContainer.revalidate();
+    }
+
+    public void setRoute(String route){
+        currentRoute = route;
+        calculateRoute();
     }
 }

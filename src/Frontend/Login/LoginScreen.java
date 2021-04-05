@@ -1,9 +1,9 @@
 package Frontend.Login;
 
 import Frontend.SharedComponents.PortalButton;
-import static Constants.Constants.ADMIN;
-import static Constants.Constants.STUDENT;
-import static Constants.Constants.PARENT;
+import static Constants.UserTypes.ADMIN;
+import static Constants.UserTypes.STUDENT;
+import static Constants.UserTypes.PARENT;
 
 import javax.swing.*;
 import java.awt.*;
