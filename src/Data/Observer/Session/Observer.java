@@ -1,4 +1,4 @@
-package Data.Observer.SessionObserver;
+package Data.Observer.Session;
 
 import Backend.User.User;
 

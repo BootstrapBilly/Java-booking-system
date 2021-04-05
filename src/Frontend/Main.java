@@ -1,11 +1,12 @@
 package Frontend;
 
 import Backend.User.User;
-import Data.Observer.SessionObserver.SessionManager;
+import Data.Observer.JFrame.JFrameManager;
+import Data.Observer.Session.SessionManager;
+import Data.Singleton.Router;
 import Data.Singleton.Session;
 import Frontend.Login.LoginScreen;
 
-import java.awt.event.*;
 import javax.swing.*;
 
 public class Main extends JFrame {
@@ -14,23 +15,12 @@ public class Main extends JFrame {
         super("Booking system");
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        LoginScreen loginScreen = new LoginScreen();
-        add(loginScreen.component());
-
         setExtendedState(JFrame.MAXIMIZED_BOTH); //full screen j frame
+        JFrameManager app = Data.Singleton.JFrame.getInstance();
+        app.setJframe(this);
 
-        SessionManager session = Session.getInstance();
-
-        User user = new User("1", "billy", true, false);
-        System.out.println(session.getSession());
-
-        session.login(user);
-
-        System.out.println("Main");
-        System.out.println(session.getSession());
-
-
+        Router appRouter = Router.getInstance();
+        appRouter.calculateRoute();
 
     }
 

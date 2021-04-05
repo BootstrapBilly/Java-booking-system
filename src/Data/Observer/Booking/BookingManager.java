@@ -1,4 +1,4 @@
-package Data.Observer.BookingObserver;
+package Data.Observer.Booking;
 
 import Backend.Event.Booking;
 

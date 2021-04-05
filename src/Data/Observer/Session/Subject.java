@@ -1,4 +1,4 @@
-package Data.Observer.BookingObserver;
+package Data.Observer.Session;
 
 public interface Subject {
     public void register(Observer o);

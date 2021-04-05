@@ -1,6 +1,8 @@
 package Frontend.Handlers;
 
-import Data.Observer.SessionObserver.SessionManager;
+import Backend.User.User;
+import Data.Observer.Session.SessionManager;
+import Data.Singleton.Router;
 import Data.Singleton.Session;
 
 import javax.swing.*;
@@ -12,16 +14,19 @@ public class PortalNavigationHandler implements ActionListener {
         super ();
     }
 
-    // this method provides the functionality when the button is clicked
     public void actionPerformed(ActionEvent e) {
         String userType = ((JButton) e.getSource()).getName();
-        System.out.println(userType);
+//        System.out.println(userType);
 
         SessionManager session = Session.getInstance();
 
-        System.out.println("event");
+        User user = new User("1", "billy", true, false);
 
-        System.out.println(session.getSession());
+        session.login(user);
+
+
+        Router appRouter = Router.getInstance();
+        appRouter.calculateRoute();
     }
 
 }

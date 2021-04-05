@@ -1,4 +1,4 @@
-package Data.Observer.SessionObserver;
+package Data.Observer.Session;
 
 import Backend.User.User;
 
@@ -11,14 +11,14 @@ public class SessionObserver implements Observer {
 
     private int observerID;
 
-    private Subject userGrabber;
+    private Subject sessionGrabber;
 
-    public SessionObserver(Subject userGrabber) {
+    public SessionObserver(Subject sessionGrabber) {
 
-        this.userGrabber = userGrabber;
+        this.sessionGrabber = sessionGrabber;
         this.observerID = ++observerIDTracker;
 
-        userGrabber.register(this);
+        sessionGrabber.register(this);
     }
 
     @Override

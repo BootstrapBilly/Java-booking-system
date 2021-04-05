@@ -1,6 +1,6 @@
 package Data.Singleton;
 
-import Data.Observer.SessionObserver.SessionManager;
+import Data.Observer.Session.SessionManager;
 
 public class Session {
     private static SessionManager uniqueInstance;
