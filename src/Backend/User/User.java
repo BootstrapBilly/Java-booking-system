@@ -11,4 +11,8 @@ public class User extends Entity {
         this.isAdmin = isAdmin;
         this.isStudent = isStudent;
     }
+
+    public String getName(){
+        return super.getName();
+    }
 }

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class SessionManager implements Subject {
 
     private ArrayList<Observer> observers;
+    private String userType;
     private User user;
 
     public SessionManager() {
@@ -29,6 +30,15 @@ public class SessionManager implements Subject {
         for(Observer obs : observers){
             obs.update(user);
         }
+    }
+
+    public void setUserType(String userType){
+        this.userType = userType;
+        notifyObservers();
+    }
+
+    public String getUserType() {
+        return userType;
     }
 
     public void login(User user){

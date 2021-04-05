@@ -1,4 +1,4 @@
-package Frontend.Login;
+package Frontend.Screens.Login;
 
 import Frontend.SharedComponents.PortalButton;
 import static Constants.UserTypes.ADMIN;

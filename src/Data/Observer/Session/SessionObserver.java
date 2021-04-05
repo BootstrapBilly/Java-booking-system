@@ -2,7 +2,6 @@ package Data.Observer.Session;
 
 import Backend.User.User;
 
-
 public class SessionObserver implements Observer {
 
     private User user;

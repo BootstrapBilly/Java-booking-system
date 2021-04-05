@@ -2,8 +2,8 @@ package Data.Singleton;
 
 import Constants.Routes;
 import Data.Observer.JFrame.JFrameManager;
-import Data.Observer.Session.SessionManager;
-import Frontend.Login.LoginScreen;
+import Frontend.Screens.Login.LoginScreen;
+import Frontend.Screens.UserSelect.UserSelect;
 
 import javax.swing.*;
 
@@ -30,7 +30,7 @@ public class Router {
         return uniqueInstance;
     }
 
-    public void calculateRoute(){
+    public void paintScreen(){
         JComponent content = null;
 
         switch (currentRoute){
@@ -39,11 +39,8 @@ public class Router {
                 content = loginScreen.component();
                 break;
             case Routes.USER_SELECT:
-                JPanel panel = new JPanel();
-                JLabel label = new JLabel("hi");
-
-                panel.add(label);
-                content = panel;
+                UserSelect userSelect = new UserSelect();
+                content = userSelect.component();
                 break;
         }
         appContainer.setContentPane(content);
@@ -52,6 +49,6 @@ public class Router {
 
     public void setRoute(String route){
         currentRoute = route;
-        calculateRoute();
+        paintScreen();
     }
 }
