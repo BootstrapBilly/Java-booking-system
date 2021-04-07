@@ -2,15 +2,18 @@ package Data.Singleton;
 
 import Constants.Routes;
 import Data.Observer.JFrame.JFrameManager;
-import Frontend.Screens.Login.LoginScreen;
+import Data.Singleton.ScreenProviders.UTS;
+import Frontend.Screens.Login.UserTypeSelect;
 import Frontend.Screens.UserSelect.UserSelect;
 
 import javax.swing.*;
+import java.util.Stack;
 
 public class Router {
 
     private static javax.swing.JFrame appContainer;
     private static String currentRoute;
+    private static Stack<String> history = new Stack<>();
 
     private static Router uniqueInstance;
 
@@ -24,6 +27,7 @@ public class Router {
             appContainer = app.getJFrame();
 
             currentRoute = Routes.LOGIN;
+            history.push(Routes.LOGIN);
 
             uniqueInstance = router;
         }
@@ -35,8 +39,8 @@ public class Router {
 
         switch (currentRoute){
             case Routes.LOGIN:
-                LoginScreen loginScreen = new LoginScreen();
-                content = loginScreen.component();
+                UserTypeSelect userTypeSelect = UTS.getInstance();
+                content = userTypeSelect.component();
                 break;
             case Routes.USER_SELECT:
                 UserSelect userSelect = new UserSelect();
@@ -49,6 +53,15 @@ public class Router {
 
     public void setRoute(String route){
         currentRoute = route;
+        paintScreen();
+
+        history.push(route);
+    }
+
+    public void goBack() {
+        history.pop();
+
+        currentRoute = history.peek();
         paintScreen();
     }
 }

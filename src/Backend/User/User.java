@@ -15,4 +15,6 @@ public class User extends Entity {
     public String getName(){
         return super.getName();
     }
+    public Boolean isAdmin() { return isAdmin; }
+    public Boolean isStudent() { return isStudent; }
 }

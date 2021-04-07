@@ -8,7 +8,7 @@ import static Constants.UserTypes.PARENT;
 import javax.swing.*;
 import java.awt.*;
 
-public class LoginScreen {
+public class UserTypeSelect {
 
     private JPanel container;
 
@@ -18,7 +18,7 @@ public class LoginScreen {
     static JPanel midCol = new JPanel();
     static JPanel rightCol = new JPanel();
 
-    public LoginScreen() {
+    public UserTypeSelect() {
         container = new JPanel();
         container.setLayout(new GridBagLayout());
 
@@ -76,5 +76,9 @@ public class LoginScreen {
 
     public JPanel component() {
         return container;
+    }
+
+    public void destroy(){
+        container.removeAll();
     }
 }
