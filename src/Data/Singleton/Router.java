@@ -2,8 +2,9 @@ package Data.Singleton;
 
 import Constants.Routes;
 import Data.Observer.JFrame.JFrameManager;
-import Data.Singleton.ScreenProviders.UTS;
-import Frontend.Screens.Login.UserTypeSelect;
+import Frontend.Screens.FindLessonBy.FindLessonBy;
+import Frontend.Screens.UserTypeSelect.UserTypeSelect;
+import Frontend.Screens.UserTypeSelect.UTS;
 import Frontend.Screens.UserSelect.UserSelect;
 
 import javax.swing.*;
@@ -46,6 +47,9 @@ public class Router {
                 UserSelect userSelect = new UserSelect();
                 content = userSelect.component();
                 break;
+            case Routes.FIND_LESSON_BY_SELECT:
+                FindLessonBy findLessonBy = new FindLessonBy();
+                content = findLessonBy.component();
         }
         appContainer.setContentPane(content);
         appContainer.revalidate();

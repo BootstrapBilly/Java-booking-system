@@ -1,7 +1,5 @@
-package Data.Singleton.ScreenProviders;
-
-import Frontend.Screens.Login.UserTypeSelect;
-
+package Frontend.Screens.UserTypeSelect;
+// @refactor -> wrapped this in a singleton to prevent the buttons from being rendered twice when navigating backwards
 public class UTS {
     private static UserTypeSelect uniqueInstance;
 

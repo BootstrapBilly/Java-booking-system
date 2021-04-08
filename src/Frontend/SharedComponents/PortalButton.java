@@ -2,7 +2,7 @@ package Frontend.SharedComponents;
 
 import javax.swing.*;
 import java.awt.*;
-import Frontend.Handlers.PortalNavigationHandler;
+import Frontend.Handlers.UserTypeSelectionHandler;
 
 public class PortalButton {
 
@@ -11,7 +11,7 @@ public class PortalButton {
     public PortalButton(String text) {
         container = new JButton();
         container.setLayout(new GridBagLayout());
-        container.addActionListener(new PortalNavigationHandler());
+        container.addActionListener(new UserTypeSelectionHandler());
         container.setName(text);
 
         JLabel title = new JLabel(text);

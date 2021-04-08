@@ -1,6 +1,5 @@
 package Frontend.SharedComponents;
 
-import Frontend.Handlers.PortalNavigationHandler;
 import Frontend.Handlers.UserSelectionHandler;
 
 import javax.swing.*;

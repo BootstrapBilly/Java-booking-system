@@ -1,4 +1,4 @@
-package Frontend.Screens.Login;
+package Frontend.Screens.UserTypeSelect;
 
 import Frontend.SharedComponents.PortalButton;
 import static Constants.UserTypes.ADMIN;

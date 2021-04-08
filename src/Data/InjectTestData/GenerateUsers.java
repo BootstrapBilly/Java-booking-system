@@ -9,14 +9,17 @@ public class GenerateUsers {
         UsersManager usersManager = Users.getManager();
 
         // students
-        usersManager.addUser(new User("1", "Billy", false, true));
-        usersManager.addUser(new User("2", "James", false, true));
-        usersManager.addUser(new User("3", "Emily", false, true));
-        usersManager.addUser(new User("4", "Sarah", false, true));
-        usersManager.addUser(new User("5", "David", false, true));
+        usersManager.addUser(new User("1", "Billy", false, true, false));
+        usersManager.addUser(new User("2", "James", false, true, false));
+        usersManager.addUser(new User("3", "Emily", false, true, false));
+        usersManager.addUser(new User("4", "Sarah", false, true, false));
+        usersManager.addUser(new User("5", "David", false, true, false));
 
         // admins
-        usersManager.addUser(new User("1", "John", true, false));
-        usersManager.addUser(new User("2", "Jennie", true, false));
+        usersManager.addUser(new User("6", "John", true, false, false));
+        usersManager.addUser(new User("7", "Jennie", true, false, false));
+
+        // parent
+        usersManager.addUser(new User("8", "Parent", false, false, true));
     }
 }
