@@ -1,19 +1,19 @@
-package Data.Observer.Users;
+package Data.Observer.Coaches;
 
+import Backend.User.Coach;
 import Backend.User.User;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Optional;
 
-public class UsersManager implements Subject {
+public class CoachesManager implements Subject {
 
     private ArrayList<Observer> observers;
-    private ArrayList<User> users;
+    private ArrayList<Coach> coaches;
 
-    public UsersManager() {
+    public CoachesManager() {
         observers = new ArrayList<Observer>();
-        users = new ArrayList<User>();
+        coaches = new ArrayList<Coach>();
     }
 
     @Override
@@ -30,19 +30,23 @@ public class UsersManager implements Subject {
     @Override
     public void notifyObservers() {
         for(Observer obs : observers){
-            obs.update(users);
+            obs.update(coaches);
         }
     }
 
-    public void addUser(User user){
-        this.users.add(user);
+    public void addCoach(Coach coach){
+        this.coaches.add(coach);
         notifyObservers();
     }
 
-    public User getUserById(String ID){
-        Iterator<User> userIterator = this.users.iterator();
-        while(userIterator.hasNext()){
-            User next = userIterator.next();
+    public ArrayList<Coach> getCoaches(){
+        return this.coaches;
+    }
+
+    public Coach getCoachById(String ID){
+        Iterator<Coach> coachIterator = this.coaches.iterator();
+        while(coachIterator.hasNext()){
+            Coach next = coachIterator.next();
             if(next.getID() == ID){
                 return next;
             }

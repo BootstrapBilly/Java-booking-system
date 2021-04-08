@@ -10,7 +10,7 @@ public class BackButton {
     private JButton container;
 
     public BackButton() {
-        container = new JButton("Back");
+        container = new JButton("Go Back");
         container.setLayout(new GridBagLayout());
         container.addActionListener(new BackNavigationHandler());
 

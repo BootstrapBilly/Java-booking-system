@@ -2,7 +2,7 @@ package Frontend;
 
 import Data.Observer.JFrame.JFrameManager;
 import Data.Singleton.Router;
-import Data.InjectTestData.GenerateUsers;
+import Data.InjectTestData.GenerateEntities;
 import Data.Singleton.Users;
 
 import javax.swing.*;
@@ -26,7 +26,7 @@ public class Main extends JFrame {
 
         // setup the users data management system
         Users.init();
-        GenerateUsers.all(); // generate some test users
+        GenerateEntities.all(); // generate some test users
 
     }
 

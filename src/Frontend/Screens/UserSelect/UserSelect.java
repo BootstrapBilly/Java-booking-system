@@ -63,17 +63,18 @@ public class UserSelect {
         while(usersIterator.hasNext()){
 
             Frontend.SharedComponents.User user;
+            User next = usersIterator.next();
 
             switch(userType){
                 case ADMIN:
-                    if(usersIterator.next().isAdmin()){
-                        user = new Frontend.SharedComponents.User(usersIterator.next().getName());
+                    if(next.isAdmin()){
+                        user = new Frontend.SharedComponents.User(next.getID(), next.getName());
                         userDisplayContainer.add(user.component());
                     };
                     break;
                 case STUDENT:
-                    if(usersIterator.next().isStudent()){
-                        user = new Frontend.SharedComponents.User(usersIterator.next().getName());
+                    if(next.isStudent()){
+                        user = new Frontend.SharedComponents.User(next.getID(), next.getName());
                         userDisplayContainer.add(user.component());
                     }
             }

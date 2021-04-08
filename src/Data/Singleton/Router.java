@@ -2,6 +2,7 @@ package Data.Singleton;
 
 import Constants.Routes;
 import Data.Observer.JFrame.JFrameManager;
+import Frontend.Screens.CoachSelect.CoachSelect;
 import Frontend.Screens.FindLessonBy.FindLessonBy;
 import Frontend.Screens.UserTypeSelect.UserTypeSelect;
 import Frontend.Screens.UserTypeSelect.UTS;
@@ -50,6 +51,11 @@ public class Router {
             case Routes.FIND_LESSON_BY_SELECT:
                 FindLessonBy findLessonBy = new FindLessonBy();
                 content = findLessonBy.component();
+                break;
+            case Routes.DISPLAY_COACHES:
+                CoachSelect coachSelect = new CoachSelect();
+                content = coachSelect.component();
+                break;
         }
         appContainer.setContentPane(content);
         appContainer.revalidate();

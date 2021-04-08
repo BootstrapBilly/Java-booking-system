@@ -5,8 +5,8 @@ import Backend.Lesson.Lesson;
 public class Student extends Person {
     private Lesson[] lessons;
 
-    public Student(String ID, String name, String address, String phone) {
-        super(ID, name, address, phone);
+    public Student(String name, String address, String phone) {
+        super( name, address, phone);
     }
 
     public void printDetails(){

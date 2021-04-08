@@ -4,6 +4,7 @@ import Backend.Lesson.Lesson;
 import Backend.User.Student;
 
 import java.util.Optional;
+import java.util.UUID;
 
 public class Booking {
     private String ID;
@@ -11,8 +12,9 @@ public class Booking {
     private Lesson lesson;
     private Status status;
 
-    public Booking(String ID, Student student, Lesson lesson, Status status) {
-        this.ID = ID;
+    public Booking(Student student, Lesson lesson, Status status) {
+        UUID ID = UUID.randomUUID();
+        this.ID = ID.toString();
         this.student = student;
         this.lesson = lesson;
         this.status = status;

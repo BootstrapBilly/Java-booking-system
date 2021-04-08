@@ -9,11 +9,11 @@ public class User {
 
     private JButton container;
 
-    public User(String text) {
+    public User(String ID, String text) {
         container = new JButton();
         container.setLayout(new GridBagLayout());
         container.addActionListener(new UserSelectionHandler());
-        container.setName(text);
+        container.setName(ID);
 
         JLabel title = new JLabel(text);
         container.add(title);

@@ -1,24 +1,17 @@
 package Frontend.Screens.FindLessonBy;
-import static Constants.UserTypes.ADMIN;
-import static Constants.UserTypes.STUDENT;
-import Backend.User.User;
-import Data.Observer.Session.SessionManager;
-import Data.Singleton.Session;
+import static Constants.FindLessonBy.COACH;
+import static Constants.FindLessonBy.TYPE;
 import Frontend.Handlers.FindLessonByNavigationHandler;
 import Frontend.SharedComponents.ClickableCard;
 import Frontend.SharedComponents.Header;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Iterator;
 
 public class FindLessonBy {
 
     private JPanel container;
     private JPanel optionDisplayContainer = new JPanel(new GridBagLayout());
-
-    private ArrayList<User> users;
 
     static GridBagConstraints gbc = new GridBagConstraints();
 
@@ -53,12 +46,12 @@ public class FindLessonBy {
 
     public void addOptions(){
         ClickableCard coach = new ClickableCard(
-                "Coach",
+                "By " + COACH ,
                 new FindLessonByNavigationHandler(),
                 "lessonType.jpg");
 
         ClickableCard type = new ClickableCard(
-                "Type",
+                "By " + TYPE,
                 new FindLessonByNavigationHandler(),
                 "lessonType.jpg");
 
