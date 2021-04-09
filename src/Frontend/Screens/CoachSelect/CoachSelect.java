@@ -5,6 +5,7 @@ import static Constants.FindLessonBy.TYPE;
 import Backend.User.Coach;
 import Data.Observer.Coaches.CoachesManager;
 import Data.Singleton.Coaches;
+import Frontend.Handlers.CoachSelectionHandler;
 import Frontend.Handlers.FindLessonByNavigationHandler;
 import Frontend.SharedComponents.ClickableCard;
 import Frontend.SharedComponents.Header;
@@ -56,35 +57,33 @@ public class CoachSelect {
     }
 
     public void addOptions(){
+        GridBagConstraints optionsGbc = new GridBagConstraints();
+
+        optionsGbc.fill = GridBagConstraints.BOTH;
+        optionsGbc.weightx = 0.5;
+        optionsGbc.weighty = 0.5;
+        optionsGbc.insets = new Insets(200,5,200,5);
 
         Iterator coachesIterator = coaches.iterator();
 
+        int coachesMappedToUI = 1;
+
         while(coachesIterator.hasNext()){
-            System.out.println(coachesIterator.next());
-//            Coach coach = coachesIterator.next();
+            Coach coach = (Coach) coachesIterator.next();
+            ClickableCard coachCard = new ClickableCard(coach.getName(), new CoachSelectionHandler(),"lessonType.jpg");
+//            if(coachesMappedToUI > 3){
+//                optionsGbc.gridy = 2;
+//            }
+//            else {
+//                optionsGbc.gridy = 1;
+//            }
+            optionDisplayContainer.add(coachCard.component(), optionsGbc);
+            System.out.println(coachesMappedToUI);
+            System.out.println(coach.getName());
+            coachesMappedToUI += 1;
         }
-//        coachesIterator.
-//        ClickableCard coach = new ClickableCard(
-//                "By " + COACH ,
-//                new FindLessonByNavigationHandler(),
-//                "lessonType.jpg");
-//
-//        ClickableCard type = new ClickableCard(
-//                "By " + TYPE,
-//                new FindLessonByNavigationHandler(),
-//                "lessonType.jpg");
-//
-//        GridBagConstraints optionsGbc = new GridBagConstraints();
-//
-//        optionsGbc.fill = GridBagConstraints.BOTH;
-//        optionsGbc.weightx = 0.5;
-//        optionsGbc.weighty = 1;
-//        optionsGbc.insets = new Insets(50,30,50,30);
-//
-//        optionDisplayContainer.add(coach.component(), optionsGbc);
-//        optionDisplayContainer.add(type.component(), optionsGbc);
-//
-//        container.add(optionDisplayContainer, gbc);
+        container.add(optionDisplayContainer, gbc);
+
     }
 
     public void styleContainer(){

@@ -20,7 +20,7 @@ public class GenerateEntities {
         usersManager.addUser(new User("James", false, true, false));
         usersManager.addUser(new User("Emily", false, true, false));
         usersManager.addUser(new User("Sarah", false, true, false));
-        usersManager.addUser(new User("David", false, true, false));
+        usersManager.addUser(new User("Mo", false, true, false));
 
         // admins
         usersManager.addUser(new User("John", true, false, false));
@@ -37,6 +37,21 @@ public class GenerateEntities {
 
         coachesManager.addCoach(new Coach("Maria", "2 road avenue", "07987654321",
                 new String[] {LessonTypes.SWIMMING, LessonTypes.CRICKET},
+                new Appointment[] {}, new Appointment[] {},
+                new Lesson[] {}));
+
+        coachesManager.addCoach(new Coach("Nina", "3 avenue crescent", "07974835932",
+                new String[] {LessonTypes.BASKETBALL, LessonTypes.BADMINTON},
+                new Appointment[] {}, new Appointment[] {},
+                new Lesson[] {}));
+
+        coachesManager.addCoach(new Coach("Hassan", "4 random road", "07972084520",
+                new String[] {LessonTypes.BADMINTON},
+                new Appointment[] {}, new Appointment[] {},
+                new Lesson[] {}));
+
+        coachesManager.addCoach(new Coach("Demi", "5 long lane", "07983649573",
+                new String[] {LessonTypes.GYMNASTICS},
                 new Appointment[] {}, new Appointment[] {},
                 new Lesson[] {}));
     }

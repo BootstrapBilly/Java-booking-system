@@ -6,6 +6,7 @@ import Data.InjectTestData.GenerateEntities;
 import Data.Singleton.Users;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Main extends JFrame {
 
@@ -14,7 +15,7 @@ public class Main extends JFrame {
 
         // configure the JFrame
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setSize(new Dimension(1200, 800));
 
         // store it in a singleton so the router can manipulate it
         JFrameManager app = Data.Singleton.JFrame.getInstance();
