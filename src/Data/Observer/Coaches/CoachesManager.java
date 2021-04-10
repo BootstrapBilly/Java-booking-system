@@ -1,7 +1,6 @@
 package Data.Observer.Coaches;
 
-import Backend.User.Coach;
-import Backend.User.User;
+import Backend.User.Object;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -9,11 +8,11 @@ import java.util.Iterator;
 public class CoachesManager implements Subject {
 
     private ArrayList<Observer> observers;
-    private ArrayList<Coach> coaches;
+    private ArrayList<Object> objects;
 
     public CoachesManager() {
         observers = new ArrayList<Observer>();
-        coaches = new ArrayList<Coach>();
+        objects = new ArrayList<Object>();
     }
 
     @Override
@@ -30,23 +29,23 @@ public class CoachesManager implements Subject {
     @Override
     public void notifyObservers() {
         for(Observer obs : observers){
-            obs.update(coaches);
+            obs.update(objects);
         }
     }
 
-    public void addCoach(Coach coach){
-        this.coaches.add(coach);
+    public void addCoach(Object object){
+        this.objects.add(object);
         notifyObservers();
     }
 
-    public ArrayList<Coach> getCoaches(){
-        return this.coaches;
+    public ArrayList<Object> getCoaches(){
+        return this.objects;
     }
 
-    public Coach getCoachById(String ID){
-        Iterator<Coach> coachIterator = this.coaches.iterator();
+    public Object getCoachById(String ID){
+        Iterator<Object> coachIterator = this.objects.iterator();
         while(coachIterator.hasNext()){
-            Coach next = coachIterator.next();
+            Object next = coachIterator.next();
             if(next.getID() == ID){
                 return next;
             }

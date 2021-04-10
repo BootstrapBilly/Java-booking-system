@@ -2,7 +2,7 @@ package Data.InjectTestData;
 
 import Backend.Event.Appointment;
 import Backend.Lesson.Lesson;
-import Backend.User.Coach;
+import Backend.User.Object;
 import Backend.User.User;
 import Data.Observer.Coaches.CoachesManager;
 import Data.Observer.Users.UsersManager;
@@ -30,27 +30,27 @@ public class GenerateEntities {
         usersManager.addUser(new User("Parent", false, false, true));
 
         // coaches
-        coachesManager.addCoach(new Coach("Terry", "1 lane road", "07123456789",
+        coachesManager.addCoach(new Object("Terry", "1 lane road", "07123456789",
                 new String[] {LessonTypes.FOOTBALL},
                 new Appointment[] {}, new Appointment[] {},
                 new Lesson[] {}));
 
-        coachesManager.addCoach(new Coach("Maria", "2 road avenue", "07987654321",
+        coachesManager.addCoach(new Object("Maria", "2 road avenue", "07987654321",
                 new String[] {LessonTypes.SWIMMING, LessonTypes.CRICKET},
                 new Appointment[] {}, new Appointment[] {},
                 new Lesson[] {}));
 
-        coachesManager.addCoach(new Coach("Nina", "3 avenue crescent", "07974835932",
+        coachesManager.addCoach(new Object("Nina", "3 avenue crescent", "07974835932",
                 new String[] {LessonTypes.BASKETBALL, LessonTypes.BADMINTON},
                 new Appointment[] {}, new Appointment[] {},
                 new Lesson[] {}));
 
-        coachesManager.addCoach(new Coach("Hassan", "4 random road", "07972084520",
+        coachesManager.addCoach(new Object("Hassan", "4 random road", "07972084520",
                 new String[] {LessonTypes.BADMINTON},
                 new Appointment[] {}, new Appointment[] {},
                 new Lesson[] {}));
 
-        coachesManager.addCoach(new Coach("Demi", "5 long lane", "07983649573",
+        coachesManager.addCoach(new Object("Demi", "5 long lane", "07983649573",
                 new String[] {LessonTypes.GYMNASTICS},
                 new Appointment[] {}, new Appointment[] {},
                 new Lesson[] {}));

@@ -1,9 +1,9 @@
 package Data.Observer.Coaches;
 
-import Backend.User.Coach;
+import Backend.User.Object;
 
 import java.util.ArrayList;
 
 public interface Observer {
-    public void update(ArrayList<Coach> coaches);
+    public void update(ArrayList<Object> objects);
 }
