@@ -1,21 +1,18 @@
 package Frontend.SharedComponents;
 
-import javax.imageio.ImageIO;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.net.URL;
-
 public class ClickableCard {
 
     private JButton container;
     private GridBagConstraints gbc = new GridBagConstraints();
-    private String text;
-    private ActionListener listener;
+    private String text =  "";
+    private ActionListener listener = null;
     private String imageName;
+    private Boolean isGridFiller = false;
 
     public ClickableCard(String text, ActionListener listener, String imageName) {
         this.text = text;
@@ -45,6 +42,7 @@ public class ClickableCard {
         container.addActionListener(listener);
         container.setName(text);
     }
+
     private void addImage(){
         ClassLoader loader = ClickableCard.class.getClassLoader();
         URL url = loader.getResource("Frontend/Assets/" + imageName);

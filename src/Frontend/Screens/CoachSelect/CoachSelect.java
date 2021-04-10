@@ -1,12 +1,9 @@
 package Frontend.Screens.CoachSelect;
-import static Constants.FindLessonBy.COACH;
-import static Constants.FindLessonBy.TYPE;
 
 import Backend.User.Coach;
 import Data.Observer.Coaches.CoachesManager;
 import Data.Singleton.Coaches;
 import Frontend.Handlers.CoachSelectionHandler;
-import Frontend.Handlers.FindLessonByNavigationHandler;
 import Frontend.SharedComponents.ClickableCard;
 import Frontend.SharedComponents.Header;
 
@@ -19,8 +16,13 @@ import java.util.Iterator;
 public class CoachSelect {
 
     private JPanel container;
-    private JPanel optionDisplayContainer = new JPanel(new GridBagLayout());
+    private JPanel coachesDisplayContainer = new JPanel(new GridBagLayout());
     private ArrayList<Coach> coaches;
+
+    private int limitPerRow = 3;
+    private Boolean cleanDivide;
+    private int numRows;
+    private ArrayList rows = new ArrayList<>();
 
     static GridBagConstraints gbc = new GridBagConstraints();
 
@@ -28,11 +30,13 @@ public class CoachSelect {
         CoachesManager coaches = Coaches.getInstance();
         this.coaches = coaches.getCoaches();
 
+        this.cleanDivide = coaches.getCoaches().size() % limitPerRow == 0;
+        this.numRows = coaches.getCoaches().size() / limitPerRow;
+
         container = new JPanel();
         container.setLayout(new GridBagLayout());
 
         setupMainLayout();
-        styleContainer();
     }
 
     public void setupMainLayout(){
@@ -47,7 +51,7 @@ public class CoachSelect {
         gbc.gridy = 1;
         gbc.weighty = 0.95;
 
-        addOptions();
+        displayCoaches();
     }
 
     public void addHeader(){
@@ -56,38 +60,65 @@ public class CoachSelect {
         container.add(header.component(), gbc);
     }
 
-    public void addOptions(){
-        GridBagConstraints optionsGbc = new GridBagConstraints();
+    public void displayCoaches(){
+        setUpRows();
+        addCoachesToRows();
 
-        optionsGbc.fill = GridBagConstraints.BOTH;
-        optionsGbc.weightx = 0.5;
-        optionsGbc.weighty = 0.5;
-        optionsGbc.insets = new Insets(200,5,200,5);
-
-        Iterator coachesIterator = coaches.iterator();
-
-        int coachesMappedToUI = 1;
-
-        while(coachesIterator.hasNext()){
-            Coach coach = (Coach) coachesIterator.next();
-            ClickableCard coachCard = new ClickableCard(coach.getName(), new CoachSelectionHandler(),"lessonType.jpg");
-//            if(coachesMappedToUI > 3){
-//                optionsGbc.gridy = 2;
-//            }
-//            else {
-//                optionsGbc.gridy = 1;
-//            }
-            optionDisplayContainer.add(coachCard.component(), optionsGbc);
-            System.out.println(coachesMappedToUI);
-            System.out.println(coach.getName());
-            coachesMappedToUI += 1;
-        }
-        container.add(optionDisplayContainer, gbc);
+        container.add(coachesDisplayContainer, gbc);
 
     }
 
-    public void styleContainer(){
-        container.setBackground(Color.cyan);
+    public void setUpRows(){
+        if(!cleanDivide){ numRows += 1; }
+
+        GridBagConstraints rowGBC = new GridBagConstraints();
+
+        rowGBC.fill = GridBagConstraints.BOTH;
+        rowGBC.weightx = 1;
+        rowGBC.weighty = (float) 1 / numRows;
+
+        int currentRow = 0;
+        for(int rowsToMap = numRows; rowsToMap > 0; rowsToMap -= 1){
+            JPanel row = new JPanel(new GridLayout());
+            rowGBC.gridy = currentRow;
+
+            rows.add(row);
+            currentRow += 1;
+            coachesDisplayContainer.add(row, rowGBC);
+        }
+    }
+
+    public void addCoachesToRows(){
+        Iterator coachesIterator = coaches.iterator();
+
+        int currentRow = 0;
+        int index = 0;
+        int totalItems = numRows * limitPerRow;
+        int remainder = totalItems - coaches.size();
+
+        while(coachesIterator.hasNext()){
+
+            if(index % limitPerRow == 0 && index > 0){
+                currentRow += 1;
+            }
+
+            Coach coach = (Coach) coachesIterator.next();
+            ClickableCard coachCard = new ClickableCard(coach.getName(), new CoachSelectionHandler(),"lessonType.jpg");
+
+            JPanel row = (JPanel) rows.get(currentRow);
+            row.add(coachCard.component());
+
+            if(index + 1 == coaches.size() && !cleanDivide){
+                for(int i = remainder; i > 0; i-=1){
+                    JPanel gap = new JPanel(new GridBagLayout());
+                    row.add(gap);
+                }
+
+            }
+
+            index += 1;
+
+        }
     }
 
     public JPanel component() {
