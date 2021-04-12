@@ -1,6 +1,6 @@
 package Data.Observer.Session;
 
-import Backend.User.User;
+import Models.User.User;
 
 import java.util.ArrayList;
 

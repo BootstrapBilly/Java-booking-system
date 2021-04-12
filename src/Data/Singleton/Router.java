@@ -2,11 +2,11 @@ package Data.Singleton;
 
 import Constants.Routes;
 import Data.Observer.JFrame.JFrameManager;
-import Frontend.Screens.CoachSelect.CoachSelect;
-import Frontend.Screens.FindLessonBy.FindLessonBy;
-import Frontend.Screens.UserTypeSelect.UserTypeSelect;
-import Frontend.Screens.UserTypeSelect.UTS;
-import Frontend.Screens.UserSelect.UserSelect;
+import Views.Screens.CoachSelect.CoachSelect;
+import Views.Screens.FindLessonBy.FindLessonBy;
+import Views.Screens.UserTypeSelect.UserTypeSelect;
+import Views.Screens.UserTypeSelect.UTS;
+import Views.Screens.UserSelect.UserSelect;
 
 import javax.swing.*;
 import java.util.Stack;

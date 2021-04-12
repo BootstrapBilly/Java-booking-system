@@ -1,11 +1,11 @@
 package Data.Observer.Booking;
 
-import Backend.Event.Booking;
-import Backend.Event.Status;
-import Backend.Lesson.Lesson;
-import Backend.User.Student;
-import Backend.Util.Classes.Entity;
-import Backend.Util.Classes.TimePeriod;
+import Models.Event.Booking;
+import Models.Event.Status;
+import Models.Lesson.Lesson;
+import Models.User.Student;
+import Models.Util.Classes.Entity;
+import Models.Util.Classes.TimePeriod;
 
 public class GrabBooking {
 

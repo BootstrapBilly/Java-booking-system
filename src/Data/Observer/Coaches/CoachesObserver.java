@@ -1,12 +1,12 @@
 package Data.Observer.Coaches;
 
-import Backend.User.Object;
+import Models.User.Coach;
 
 import java.util.ArrayList;
 
 public class CoachesObserver implements Observer {
 
-    private ArrayList<Object> objects;
+    private ArrayList<Coach> coaches;
 
     private static int observerIDTracker = 0;
 
@@ -22,12 +22,12 @@ public class CoachesObserver implements Observer {
         coachesGrabber.register(this);
     }
 
-    public ArrayList<Object> getUsers(){
-        return this.objects;
+    public ArrayList<Coach> getUsers(){
+        return this.coaches;
     }
 
     @Override
-    public void update(ArrayList<Object> objects) {
-        this.objects = objects;
+    public void update(ArrayList<Coach> coaches) {
+        this.coaches = coaches;
     }
 }

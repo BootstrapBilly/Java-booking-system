@@ -1,6 +1,6 @@
 package Data.Observer.Booking;
 
-import Backend.Event.Booking;
+import Models.Event.Booking;
 
 import java.util.ArrayList;
 
