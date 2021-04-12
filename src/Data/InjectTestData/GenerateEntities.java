@@ -14,11 +14,18 @@ import Data.Singleton.Lessons;
 import Data.Singleton.Users;
 import Constants.LessonTypes;
 
+import java.util.ArrayList;
+
 public class GenerateEntities {
+    private static ArrayList <TimePeriod> times = new ArrayList<>();
+
     public static void all(){
         UsersManager usersManager = Users.getManager();
         CoachesManager coachesManager = Coaches.getInstance();
         LessonManager lessonManager = Lessons.getInstance();
+
+        // times
+        generateTimePeriods();
 
         // students
         usersManager.addUser(new User("Billy", false, true, false));
@@ -34,12 +41,9 @@ public class GenerateEntities {
         // parent
         usersManager.addUser(new User("Parent", false, false, true));
 
-        // times
-        TimePeriod week1 = new TimePeriod(1, 2, 18, 0, 60);
-
         // lessons
-        Lesson f1 = new Lesson("Football", new Entity("Football pitch"), week1, 15, 0);
-        Lesson b1 = new Lesson("Basketball", new Entity("Basketball court"), week1, 15, 0);
+        Lesson f1 = new Lesson("Football", new Entity("Football pitch"), times.get(0), 15, 0);
+        Lesson b1 = new Lesson("Basketball", new Entity("Basketball court"), times.get(9), 15, 0);
         lessonManager.addLesson(f1);
         lessonManager.addLesson(b1);
 
@@ -69,5 +73,31 @@ public class GenerateEntities {
                 new Appointment[] {}, new Appointment[] {},
                 new Lesson[] {}));
 
+    }
+
+    public static void generateTimePeriods(){
+        int week = 1;
+
+        int[] days = {1,2,3,4,5};
+        int dayIndex = 0;
+
+        int[] hours = {16, 17, 18, 19};
+        int hourIndex = 0;
+
+        for(int i = 0; i < 80; i += 1){
+            if(i % 20 == 0){
+                week += 1;
+                dayIndex = 0;
+                hourIndex = 0;
+
+            };
+            times.add(new TimePeriod(week - 1, days[dayIndex], hours[hourIndex], 00, 60));
+            if(hourIndex == hours.length - 1){
+                hourIndex = 0;
+                dayIndex += 1;
+            } else {
+                hourIndex +=1;
+            }
+        }
     }
 }

@@ -1,7 +1,7 @@
 package Views.Screens.FindLessonBy;
 import static Constants.FindLessonBy.COACH;
 import static Constants.FindLessonBy.TYPE;
-import Controllers.FindLessonByNavigationHandler;
+
 import Views.SharedComponents.ClickableCard;
 import Views.SharedComponents.Header;
 
@@ -48,13 +48,13 @@ public class FindLessonBy {
         ClickableCard coach = new ClickableCard(
                 "By " + COACH ,
                 "1",
-                new FindLessonByNavigationHandler(),
+                new Controllers.FindLessonBy(),
                 "lessonType.jpg");
 
         ClickableCard type = new ClickableCard(
                 "By " + TYPE,
                 "2",
-                new FindLessonByNavigationHandler(),
+                new Controllers.FindLessonBy(),
                 "lessonType.jpg");
 
         GridBagConstraints optionsGbc = new GridBagConstraints();

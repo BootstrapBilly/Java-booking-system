@@ -1,6 +1,6 @@
 package Views.SharedComponents;
 
-import Controllers.UserSelectionHandler;
+import Controllers.SelectUser;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +12,7 @@ public class User {
     public User(String ID, String text) {
         container = new JButton();
         container.setLayout(new GridBagLayout());
-        container.addActionListener(new UserSelectionHandler());
+        container.addActionListener(new SelectUser());
         container.setName(ID);
 
         JLabel title = new JLabel(text);

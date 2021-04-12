@@ -3,15 +3,18 @@ package Data.Observer.Lesson;
 import Models.Lesson.Lesson;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class LessonManager implements Subject {
 
     private ArrayList<Observer> observers;
     private ArrayList<Lesson> lessons;
+    private ArrayList<Lesson> lessonsToDisplay;
 
     public LessonManager() {
         observers = new ArrayList<Observer>();
         lessons = new ArrayList<Lesson>();
+        lessonsToDisplay = new ArrayList<Lesson>();
     }
 
     @Override
@@ -37,4 +40,18 @@ public class LessonManager implements Subject {
         notifyObservers();
     }
 
+    public void addLessonToDisplay(){
+        this.lessonsToDisplay.add(lessonsToDisplay.get(0));
+        notifyObservers();
+    }
+
+
+    public void setLessonsToDisplay(Lesson[] lessons){
+        lessonsToDisplay.addAll(Arrays.asList(lessons));
+        notifyObservers();
+    }
+
+    public ArrayList<Lesson> getLessonsToDisplay() {
+        return lessonsToDisplay;
+    }
 }

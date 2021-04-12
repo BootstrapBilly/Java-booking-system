@@ -1,25 +1,25 @@
-package Views.Screens.CoachSelect;
+package Views.Screens.DisplayCoaches;
 
 import Data.Observer.Coaches.CoachesManager;
 import Data.Singleton.Coaches;
-import Controllers.CoachSelectionHandler;
+import Controllers.SelectCoach;
 import Views.Screens.MainLayout.MainLayout;
 import Views.SharedComponents.Header;
 import javax.swing.*;
 
 
-public class CoachSelect {
+public class DisplayCoaches {
 
     private MainLayout container;
 
-    public CoachSelect(){
+    public DisplayCoaches(){
         CoachesManager coaches = Coaches.getInstance();
 
         this.container = new MainLayout(
                 3,
                 coaches.getCoaches(),
                 new Header(true, "Which coach are you looking for ?"),
-                new CoachSelectionHandler(),
+                new SelectCoach(),
                 20, 20);
     }
 

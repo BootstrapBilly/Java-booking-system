@@ -19,9 +19,9 @@ public class TimePeriod {
     public void printDetails(){
         System.out.println(
                 "Week: " + week +
-                        "Day: " + day +
-                        "Time: " + startTimeHour + ":" + startTimeMinute +
-                        "Duration: " + durationMins + " mins"
+                        " Day: " + day +
+                        " Time: " + startTimeHour + ":" + startTimeMinute +
+                        " Duration: " + durationMins + " mins"
         );
     }
 }

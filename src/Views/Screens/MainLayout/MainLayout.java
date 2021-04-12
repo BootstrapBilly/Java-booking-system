@@ -1,6 +1,7 @@
 package Views.Screens.MainLayout;
 
 import Models.User.Coach;
+import Models.Util.Classes.Entity;
 import Views.SharedComponents.ClickableCard;
 import Views.SharedComponents.Header;
 
@@ -15,7 +16,7 @@ public class MainLayout {
 
     private JComponent container;
     private JPanel cardDisplayContainer;
-    private ArrayList<Coach> items;
+    private ArrayList items;
 
     private Header header;
 
@@ -31,7 +32,7 @@ public class MainLayout {
 
     static GridBagConstraints gbc = new GridBagConstraints();
 
-    public MainLayout(int limitPerRow, ArrayList<Coach> items, Header header, ActionListener itemClickHandler, int rowPadding, int colPadding) {
+    public MainLayout(int limitPerRow, ArrayList items, Header header, ActionListener itemClickHandler, int rowPadding, int colPadding) {
         this.items = items;
         this.limitPerRow = limitPerRow;
         this.cleanDivide = items.size() % limitPerRow == 0;
@@ -109,8 +110,8 @@ public class MainLayout {
                 currentRow += 1;
             }
 
-            Coach coach = (Coach) itemsIterator.next();
-            ClickableCard itemCard = new ClickableCard(coach.getName(), coach.getID(), itemClickHandler,"lessonType.jpg");
+            Entity e = (Entity) itemsIterator.next();
+            ClickableCard itemCard = new ClickableCard(e.getName(), e.getID(), itemClickHandler,"lessonType.jpg");
 
             JPanel row = (JPanel) rows.get(currentRow);
             row.add(itemCard.component());

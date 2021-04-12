@@ -1,6 +1,6 @@
 package Views.SharedComponents;
 
-import Controllers.BackNavigationHandler;
+import Controllers.BackwardsNavigation;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +12,7 @@ public class BackButton {
     public BackButton() {
         container = new JButton("Go Back");
         container.setLayout(new GridBagLayout());
-        container.addActionListener(new BackNavigationHandler());
+        container.addActionListener(new BackwardsNavigation());
 
     }
 
