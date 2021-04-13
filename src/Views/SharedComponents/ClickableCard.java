@@ -2,9 +2,13 @@ package Views.SharedComponents;
 
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.net.URL;
+
+import static Views.Util.Methods.setFontSize;
+
 public class ClickableCard {
 
     private JButton container;
@@ -22,22 +26,14 @@ public class ClickableCard {
 
         setupMainLayout();
 
-        gbc.fill = GridBagConstraints.BOTH;
-        gbc.weightx = 1;
-        gbc.weighty = 0.9;
-        gbc.gridy = 0;
-
         addImage();
-
-        gbc.weighty = 0.1;
-        gbc.gridy = 1;
 
         addTitle();
     }
 
     private void setupMainLayout(){
         container = new JButton();
-        container.setLayout(new GridBagLayout());
+        container.setLayout(new BorderLayout());
         container.setMargin(new Insets(0,0,0,0));
         container.setBorderPainted(false);
         container.addActionListener(listener);
@@ -50,14 +46,16 @@ public class ClickableCard {
 
         JLabel image = new JLabel();
         image.setIcon(new ImageIcon(url));
-        container.add(image, gbc);
+        container.add(image, BorderLayout.CENTER);
     }
 
     private void addTitle(){
         JPanel titleContainer = new JPanel(new GridBagLayout());
+        titleContainer.setBorder(new EmptyBorder(10,5,10,5));
         JLabel title = new JLabel(text);
+        setFontSize(title, 16);
         titleContainer.add(title);
-        container.add(titleContainer, gbc);
+        container.add(titleContainer, BorderLayout.SOUTH);
     }
 
     public JButton component() { return container; }
