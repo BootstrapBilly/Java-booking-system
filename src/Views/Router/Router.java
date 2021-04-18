@@ -1,8 +1,9 @@
-package Data.Singleton;
+package Views.Router;
 
 import Constants.Routes;
 import Data.Observer.JFrame.JFrameManager;
 import Views.Screens.DisplayCoaches.DisplayCoaches;
+import Views.Screens.DisplayLessons.DL;
 import Views.Screens.DisplayLessons.DisplayLessons;
 import Views.Screens.FindLessonBy.FindLessonBy;
 import Views.Screens.UserTypeSelect.UserTypeSelect;
@@ -12,7 +13,7 @@ import Views.Screens.UserSelect.UserSelect;
 import javax.swing.*;
 import java.util.Stack;
 
-public class Router {
+public class Router extends RouterHooks {
 
     private static javax.swing.JFrame appContainer;
     private static String currentRoute;
@@ -58,12 +59,14 @@ public class Router {
                 content = displayCoaches.component();
                 break;
             case Routes.DISPLAY_LESSONS:
-                DisplayLessons displayLessons = new DisplayLessons();
+                DisplayLessons displayLessons = DL.getInstance();
                 content = displayLessons.component();
                 break;
         }
+
         appContainer.setContentPane(content);
         appContainer.revalidate();
+
     }
 
     public void setRoute(String route){
@@ -79,4 +82,5 @@ public class Router {
         currentRoute = history.peek();
         paintScreen();
     }
+
 }

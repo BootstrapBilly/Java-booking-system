@@ -3,12 +3,13 @@ package Views.Screens.DisplayLessons;
 import Controllers.SelectLesson;
 import Data.Observer.Lesson.LessonManager;
 import Data.Singleton.Lessons;
+import Views.Router.RouterHooks;
 import Views.Screens.MainLayout.MainLayout;
 import Views.SharedComponents.Header;
 
 import javax.swing.*;
 
-public class DisplayLessons {
+public class DisplayLessons extends RouterHooks {
 
     private MainLayout container;
 
@@ -22,6 +23,7 @@ public class DisplayLessons {
                 new Header(true, "Which lesson interests you ?"),
                 new SelectLesson(),
                 20, 20);
+
     }
 
     public JComponent component() {

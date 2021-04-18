@@ -1,6 +1,6 @@
 package Controllers;
 
-import Data.Singleton.Router;
+import Views.Router.Router;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

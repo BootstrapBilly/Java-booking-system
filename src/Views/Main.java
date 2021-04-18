@@ -1,7 +1,7 @@
 package Views;
 
 import Data.Observer.JFrame.JFrameManager;
-import Data.Singleton.Router;
+import Views.Router.Router;
 import Data.InjectTestData.GenerateEntities;
 import Data.Singleton.Users;
 
@@ -28,7 +28,7 @@ public class Main extends JFrame {
         // setup the users data management system
         Users.init();
         GenerateEntities.all(); // generate some test users
-
+        
     }
 
     public static void main(String[] args) {

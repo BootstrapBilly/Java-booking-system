@@ -1,4 +1,4 @@
-package Data.Singleton;
+package Views.Router;
 
 import org.junit.jupiter.api.Test;
 

@@ -13,8 +13,8 @@ class CoachTest {
 
     TimePeriod week1 = new TimePeriod(1, 2, 18, 0, 60);
 
-    Lesson f1 = new Lesson("Football", new Entity("Football pitch"), week1, 15, 0);
-    Lesson b1 = new Lesson("Basketball", new Entity("Basketball court"), week1, 15, 0);
+    Lesson f1 = new Lesson("Football", new Entity("Football pitch"), week1, 15);
+    Lesson b1 = new Lesson("Basketball", new Entity("Basketball court"), week1, 15);
 
     Coach testCoach = new Coach("Terry", "1 lane road", "07123456789",
             new String[] {LessonTypes.FOOTBALL},

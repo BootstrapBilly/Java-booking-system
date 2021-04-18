@@ -40,6 +40,11 @@ public class LessonManager implements Subject {
         notifyObservers();
     }
 
+    public void addLessons(Lesson[] lessons){
+        this.lessons.addAll(Arrays.asList(lessons));
+        notifyObservers();
+    }
+
     public void addLessonToDisplay(){
         this.lessonsToDisplay.add(lessonsToDisplay.get(0));
         notifyObservers();

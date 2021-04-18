@@ -2,7 +2,7 @@ package Controllers;
 
 import Data.Observer.Lesson.LessonManager;
 import Data.Singleton.Lessons;
-import Data.Singleton.Router;
+import Views.Router.Router;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

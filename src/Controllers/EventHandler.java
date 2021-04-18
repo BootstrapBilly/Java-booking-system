@@ -1,6 +1,6 @@
 package Controllers;
 
-import Data.Singleton.Router;
+import Views.Router.Router;
 
 public abstract class EventHandler {
     private Router router = Router.getInstance();

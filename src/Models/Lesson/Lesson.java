@@ -9,12 +9,12 @@ public class Lesson extends Entity{
     private int maxCapacity;
     private int currentCapacity;
 
-    public Lesson(String name, Entity venue, TimePeriod time, int maxCapacity, int currentCapacity) {
+    public Lesson(String name, Entity venue, TimePeriod time, int maxCapacity) {
         super( name);
         this.venue = venue;
         this.time = time;
         this.maxCapacity = maxCapacity;
-        this.currentCapacity = currentCapacity;
+        this.currentCapacity = 0;
     }
 
     public void printDetails(){
