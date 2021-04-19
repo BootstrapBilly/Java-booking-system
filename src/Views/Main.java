@@ -1,9 +1,9 @@
 package Views;
 
-import Data.Observer.JFrame.JFrameManager;
+import Data.Managers.JFrame.JFrameManager;
 import Views.Router.Router;
 import Data.InjectTestData.GenerateEntities;
-import Data.Singleton.Users;
+import Data.Managers.Users.Users;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +18,7 @@ public class Main extends JFrame {
         setSize(new Dimension(1200, 800));
 
         // store it in a singleton so the router can manipulate it
-        JFrameManager app = Data.Singleton.JFrame.getInstance();
+        JFrameManager app = Data.Managers.JFrame.JFrame.getInstance();
         app.setJframe(this);
 
         // setup the router and paint the first screen
@@ -26,7 +26,7 @@ public class Main extends JFrame {
         appRouter.paintScreen();
 
         // setup the users data management system
-        Users.init();
+        Users.getInstance();
         GenerateEntities.all(); // generate some test users
         
     }

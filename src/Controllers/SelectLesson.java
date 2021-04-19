@@ -1,9 +1,9 @@
 package Controllers;
 
-import Data.Observer.Lesson.LessonManager;
-import Data.Observer.Session.SessionManager;
-import Data.Singleton.Lessons;
-import Data.Singleton.Session;
+import Data.Managers.Lessons.LessonManager;
+import Data.Managers.Session.SessionManager;
+import Data.Managers.Lessons.Lessons;
+import Data.Managers.Session.Session;
 import Models.Lesson.Lesson;
 import Models.User.Student;
 import Views.Router.Router;

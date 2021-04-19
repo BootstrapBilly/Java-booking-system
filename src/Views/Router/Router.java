@@ -1,22 +1,22 @@
 package Views.Router;
 
 import Constants.Routes;
-import Data.Observer.JFrame.JFrameManager;
-import Data.Observer.Lesson.LessonManager;
-import Data.Singleton.Lessons;
-import Views.Screens.DisplayCoaches.DisplayCoaches;
-import Views.Screens.DisplayLessons.DisplayLessons;
-import Views.Screens.FindLessonBy.FindLessonBy;
+import Data.Managers.JFrame.JFrameManager;
+import Views.Main;
+import Views.Screens.DisplayCoaches;
+import Views.Screens.DisplayLessonTypes;
+import Views.Screens.DisplayLessons;
+import Views.Screens.FindLessonBy;
 import Views.Screens.UserTypeSelect.UserTypeSelect;
 import Views.Screens.UserTypeSelect.UTS;
-import Views.Screens.UserSelect.UserSelect;
+import Views.Screens.UserSelect;
 
 import javax.swing.*;
 import java.util.Stack;
 
 public class Router {
 
-    private static javax.swing.JFrame appContainer;
+    private static Main appContainer;
     private static String currentRoute;
     private static Stack<String> history = new Stack<>();
 
@@ -28,7 +28,7 @@ public class Router {
         if(uniqueInstance == null){
             Router router = new Router();
 
-            JFrameManager app = Data.Singleton.JFrame.getInstance();
+            JFrameManager app = Data.Managers.JFrame.JFrame.getInstance();
             appContainer = app.getJFrame();
 
             currentRoute = Routes.LOGIN;
@@ -62,6 +62,10 @@ public class Router {
             case Routes.DISPLAY_LESSONS:
                 DisplayLessons displayLessons = new DisplayLessons();
                 content = displayLessons.component();
+                break;
+                case Routes.DISPLAY_LESSON_TYPES:
+                DisplayLessonTypes displayLessonTypes = new DisplayLessonTypes();
+                content = displayLessonTypes.component();
                 break;
         }
 

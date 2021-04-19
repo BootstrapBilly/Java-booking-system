@@ -1,7 +1,7 @@
 package Data.InjectTestData;
 
-import Data.Observer.Students.StudentsManager;
-import Data.Singleton.Students;
+import Data.Managers.Students.StudentsManager;
+import Data.Managers.Students.Students;
 import Models.Event.Appointment;
 import Models.Lesson.Lesson;
 import Models.User.Coach;
@@ -9,12 +9,12 @@ import Models.User.Student;
 import Models.User.User;
 import Models.Util.Classes.Entity;
 import Models.Util.Classes.TimePeriod;
-import Data.Observer.Coaches.CoachesManager;
-import Data.Observer.Lesson.LessonManager;
-import Data.Observer.Users.UsersManager;
-import Data.Singleton.Coaches;
-import Data.Singleton.Lessons;
-import Data.Singleton.Users;
+import Data.Managers.Coaches.CoachesManager;
+import Data.Managers.Lessons.LessonManager;
+import Data.Managers.Users.UsersManager;
+import Data.Managers.Coaches.Coaches;
+import Data.Managers.Lessons.Lessons;
+import Data.Managers.Users.Users;
 import Constants.LessonTypes;
 import Constants.LessonCapacity;
 
@@ -24,7 +24,7 @@ public class GenerateEntities {
     private static ArrayList <TimePeriod> times = new ArrayList<>();
 
     public static void all(){
-        UsersManager usersManager = Users.getManager();
+        UsersManager usersManager = Users.getInstance();
         StudentsManager studentsManager = Students.getInstance();
         CoachesManager coachesManager = Coaches.getInstance();
         LessonManager lessonManager = Lessons.getInstance();

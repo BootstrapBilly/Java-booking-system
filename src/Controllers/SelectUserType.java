@@ -3,8 +3,8 @@ package Controllers;
 import static Constants.UserTypes.PARENT;
 
 import Constants.Routes;
-import Data.Observer.Session.SessionManager;
-import Data.Singleton.Session;
+import Data.Managers.Session.SessionManager;
+import Data.Managers.Session.Session;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

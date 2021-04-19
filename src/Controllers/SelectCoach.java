@@ -1,11 +1,11 @@
 package Controllers;
 
 import Constants.Routes;
-import Data.Observer.Lesson.LessonManager;
-import Data.Singleton.Lessons;
+import Data.Managers.Lessons.LessonManager;
+import Data.Managers.Lessons.Lessons;
 import Models.Lesson.Lesson;
-import Data.Observer.Coaches.CoachesManager;
-import Data.Singleton.Coaches;
+import Data.Managers.Coaches.CoachesManager;
+import Data.Managers.Coaches.Coaches;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

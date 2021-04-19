@@ -1,13 +1,13 @@
 package Controllers;
 
 import Constants.UserTypes;
-import Data.Observer.Students.StudentsManager;
-import Data.Singleton.Students;
+import Data.Managers.Students.StudentsManager;
+import Data.Managers.Students.Students;
 import Constants.Routes;
-import Data.Observer.Session.SessionManager;
-import Data.Observer.Users.UsersManager;
-import Data.Singleton.Session;
-import Data.Singleton.Users;
+import Data.Managers.Session.SessionManager;
+import Data.Managers.Users.UsersManager;
+import Data.Managers.Session.Session;
+import Data.Managers.Users.Users;
 import Models.Util.Classes.Entity;
 
 import javax.swing.*;
@@ -15,7 +15,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SelectUser extends EventHandler implements ActionListener {
-    private UsersManager users = Users.getManager();
+    private UsersManager users = Users.getInstance();
     private SessionManager session = Session.getInstance();
     private StudentsManager students = Students.getInstance();
 

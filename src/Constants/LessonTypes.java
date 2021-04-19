@@ -10,4 +10,5 @@ public final class LessonTypes {
     public static final String GYMNASTICS = "Gymnastics";
     public static final String CRICKET = "Cricket";
     public static final String SWIMMING = "Swimming";
+
 }

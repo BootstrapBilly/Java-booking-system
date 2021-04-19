@@ -1,8 +1,7 @@
 package Views.SharedComponents;
 
 
-import Data.Observer.Session.SessionManager;
-import Data.Singleton.Session;
+import Data.Managers.Session.Session;
 import Models.Lesson.Lesson;
 import Models.User.Student;
 
@@ -10,7 +9,6 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.net.URL;
 
 import static Views.Util.Methods.setFontSize;
 
