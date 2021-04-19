@@ -37,8 +37,12 @@ public class Lesson extends Entity {
         this.currentCapacity += 1;
     }
 
+    public void decrementCapacity() {
+        this.currentCapacity -= 1;
+    }
+
     public boolean hasSpace(){
-        if(currentCapacity == maxCapacity){
+        if(currentCapacity >= maxCapacity){
             return false;
         }
         return true;

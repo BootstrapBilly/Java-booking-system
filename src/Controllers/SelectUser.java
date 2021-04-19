@@ -3,7 +3,6 @@ package Controllers;
 import Constants.UserTypes;
 import Data.Observer.Students.StudentsManager;
 import Data.Singleton.Students;
-import Models.User.User;
 import Constants.Routes;
 import Data.Observer.Session.SessionManager;
 import Data.Observer.Users.UsersManager;
@@ -30,7 +29,7 @@ public class SelectUser extends EventHandler implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         userID = ((JButton) e.getSource()).getName(); // get the id from the user to login
 
-        handleNavigation();
+        handleEvent();
     }
 
     @Override

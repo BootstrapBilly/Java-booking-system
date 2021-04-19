@@ -10,7 +10,7 @@ public class FindLessonBy extends EventHandler implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        handleNavigation();
+        handleEvent();
     }
 
     @Override

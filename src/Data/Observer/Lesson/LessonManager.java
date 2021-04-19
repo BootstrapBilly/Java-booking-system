@@ -46,6 +46,14 @@ public class LessonManager implements Subject {
         notifyObservers();
     }
 
+    public void cancelLesson(String id) {
+        for(Lesson l : lessons){
+            if(l.getID() == id){
+                l.decrementCapacity();
+            }
+        }
+    }
+
     public void addLessons(Lesson[] lessons){
         this.lessons.addAll(Arrays.asList(lessons));
         notifyObservers();
@@ -72,4 +80,5 @@ public class LessonManager implements Subject {
     public ArrayList<Lesson> getLessonsToDisplay() {
         return lessonsToDisplay;
     }
+
 }

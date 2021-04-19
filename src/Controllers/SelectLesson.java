@@ -2,11 +2,8 @@ package Controllers;
 
 import Data.Observer.Lesson.LessonManager;
 import Data.Observer.Session.SessionManager;
-import Data.Observer.Users.UsersManager;
 import Data.Singleton.Lessons;
 import Data.Singleton.Session;
-import Data.Singleton.Students;
-import Data.Singleton.Users;
 import Models.Lesson.Lesson;
 import Models.User.Student;
 import Views.Router.Router;
@@ -15,31 +12,48 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SelectLesson implements ActionListener {
+public class SelectLesson extends EventHandler implements ActionListener {
+
+    private SessionManager session = Session.getInstance();
+    private LessonManager lessons = Lessons.getInstance();
+    private Router router = Router.getInstance();
+
+    private String lessonId;
+    private Student student;
+    private Lesson selectedLesson;
+    private Boolean studentBookedAlready;
+
     public SelectLesson() {
-        super ();
+        super();
     }
 
     public void actionPerformed(ActionEvent e) {
-        String lessonId = ((JButton) e.getSource()).getName();
+        lessonId = ((JButton) e.getSource()).getName();
 
-        // singletons
-
-        SessionManager session = Session.getInstance();
-        LessonManager lessons = Lessons.getInstance();
-
-        Student student = (Student) session.getSession();
-        Lesson selectedLesson = lessons.getLessonById(lessonId);
-
-        System.out.println(student.getName());
-
-        lessons.bookLesson(lessonId);
-        student.bookLesson(selectedLesson);
-
-        Router router = Router.getInstance();
+        handleEvent();
         router.paintScreen();
-
 
     }
 
+    @Override
+    public void setupRequiredData() {
+        student = (Student) session.getSession();
+        selectedLesson = lessons.getLessonById(lessonId);
+        studentBookedAlready = student.isAttendingLesson(lessonId);
+    }
+
+    @Override
+    public void updateDataStore() {
+        if (!selectedLesson.hasSpace()) {
+            return;
+        }
+        if (studentBookedAlready) {
+            lessons.cancelLesson(lessonId);
+            student.cancelLesson(selectedLesson);
+            
+        } else {
+            lessons.bookLesson(lessonId);
+            student.bookLesson(selectedLesson);
+        }
+    }
 }

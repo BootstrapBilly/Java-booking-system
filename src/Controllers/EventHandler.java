@@ -5,7 +5,7 @@ import Views.Router.Router;
 public abstract class EventHandler {
     private Router router = Router.getInstance();
 
-    public void handleNavigation(){
+    public void handleEvent(){
         setupRequiredData();
 
         updateDataStore();

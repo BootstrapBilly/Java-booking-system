@@ -110,12 +110,16 @@ public class LessonCard {
             JButton cancelButton = new JButton("Cancel");
             cancelButton.setBackground(new Color(255, 155, 155));
             cancelButton.setFont(cancelButton.getFont().deriveFont(16));
+            cancelButton.addActionListener(listener);
+            cancelButton.setName(ID);
             eastComponent = cancelButton;
         }
         else if(lesson.hasSpace()){
             JButton bookButton = new JButton("Book now");
             bookButton.setBackground(new Color(194, 226, 195));
             bookButton.setFont(bookButton.getFont().deriveFont(16));
+            bookButton.addActionListener(listener);
+            bookButton.setName(ID);
             eastComponent = bookButton;
         } else {
             JLabel full = new JLabel("Full");

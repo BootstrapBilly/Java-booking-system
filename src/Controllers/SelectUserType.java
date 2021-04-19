@@ -20,7 +20,7 @@ public class SelectUserType extends EventHandler implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         userType = ((JButton) e.getSource()).getName();
-        handleNavigation();
+        handleEvent();
     }
 
     @Override

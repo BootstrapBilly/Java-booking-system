@@ -25,7 +25,7 @@ public class SelectCoach extends EventHandler implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         coachID = ((JButton) e.getSource()).getName();
 
-        handleNavigation();
+        handleEvent();
     }
 
     @Override
