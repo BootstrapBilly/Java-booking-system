@@ -4,7 +4,7 @@ import Constants.Routes;
 import Data.Managers.JFrame.JFrameManager;
 import Views.Main;
 import Views.Screens.DisplayCoaches;
-import Views.Screens.DisplayLessonTypes;
+import Views.Screens.DisplayActivityTypes;
 import Views.Screens.DisplayLessons;
 import Views.Screens.FindLessonBy;
 import Views.Screens.UserTypeSelect.UserTypeSelect;
@@ -64,8 +64,8 @@ public class Router {
                 content = displayLessons.component();
                 break;
                 case Routes.DISPLAY_LESSON_TYPES:
-                DisplayLessonTypes displayLessonTypes = new DisplayLessonTypes();
-                content = displayLessonTypes.component();
+                DisplayActivityTypes displayActivityTypes = new DisplayActivityTypes();
+                content = displayActivityTypes.component();
                 break;
         }
 

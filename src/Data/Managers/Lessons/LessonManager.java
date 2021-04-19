@@ -1,8 +1,8 @@
 package Data.Managers.Lessons;
 
-import Constants.LessonTypes;
+import Data.Managers.ActivityType.ActivityType;
+import Data.Managers.ActivityType.ActivityTypeManager;
 import Models.Lesson.Lesson;
-import Models.Util.Classes.Entity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,12 +12,6 @@ public class LessonManager {
 
     private ArrayList<Lesson> lessons;
     private ArrayList<Lesson> lessonsToDisplay;
-
-    private String currentLessonType = "";
-    private ArrayList<Entity> lessonTypes = new ArrayList<Entity>(
-            Arrays.asList(new Entity(LessonTypes.FOOTBALL), new Entity(LessonTypes.BASKETBALL), new Entity(LessonTypes.BADMINTON),
-                    new Entity(LessonTypes.GYMNASTICS), new Entity(LessonTypes.CRICKET), new Entity(LessonTypes.SWIMMING))
-    );
 
     public LessonManager() {
         lessons = new ArrayList<Lesson>();
@@ -44,17 +38,17 @@ public class LessonManager {
         this.lessons.addAll(Arrays.asList(lessons));
     }
 
-
     public void setLessonsToDisplay(Lesson[] lessons){
         lessonsToDisplay = new ArrayList<>(Arrays.asList(lessons));
     }
 
     public void setLessonsToDisplayByType(){
+        ActivityTypeManager activityTypes = ActivityType.getInstance();
         ArrayList lessonsToDisplay = new ArrayList();
         Iterator<Lesson> lessonsIterator = this.lessons.iterator();
         while(lessonsIterator.hasNext()){
             Lesson next = lessonsIterator.next();
-            if(next.getName() == currentLessonType){
+            if(next.getName() == activityTypes.getCurrentActivityType()){
                 lessonsToDisplay.add(next);
             }
         }
@@ -72,24 +66,6 @@ public class LessonManager {
         }
 
         return null;
-    }
-
-    public ArrayList<Entity> getLessonTypes(){
-        return lessonTypes;
-    }
-
-    public void setCurrentLessonType(String typeId){
-        Iterator<Entity> typesIterator = this.lessonTypes.iterator();
-        while(typesIterator.hasNext()){
-            Entity next = typesIterator.next();
-            if(next.getID() == typeId){
-               this.currentLessonType = next.getName();
-            }
-        }
-    }
-
-    public String getCurrentLessonType() {
-        return currentLessonType;
     }
 
     public ArrayList<Lesson> getLessonsToDisplay() {

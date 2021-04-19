@@ -2,6 +2,9 @@ package Views.Screens;
 import static Constants.FindLessonBy.COACH;
 import static Constants.FindLessonBy.TYPE;
 
+import Constants.UserTypes;
+import Data.Managers.Session.Session;
+import Data.Managers.Session.SessionManager;
 import Views.SharedComponents.NavigationCard;
 import Views.SharedComponents.Header;
 
@@ -39,7 +42,9 @@ public class FindLessonBy {
     }
 
     public void addHeader(){
-        Header header = new Header(true, "How would you like to find a lesson ?");
+        SessionManager session = Session.getInstance();
+        String titleSuffix = session.getUserType() == UserTypes.PARENT ? "Appointment" : "Lesson";
+        Header header = new Header(true, "How would you like to find a " + titleSuffix + " ?");
 
         container.add(header.component(), gbc);
     }

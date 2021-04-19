@@ -4,7 +4,7 @@ import Models.Event.Appointment;
 import Models.Lesson.Lesson;
 import Models.Util.Classes.Entity;
 import Models.Util.Classes.TimePeriod;
-import Constants.LessonTypes;
+import Constants.ActivityTypes;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,7 +17,7 @@ class CoachTest {
     Lesson b1 = new Lesson("Basketball", new Entity("Basketball court"), week1, 15);
 
     Coach testCoach = new Coach("Terry", "1 lane road", "07123456789",
-            new String[] {LessonTypes.FOOTBALL},
+            new String[] {ActivityTypes.FOOTBALL},
             new Appointment[] {}, new Appointment[] {},
             new Lesson[] {f1,b1});
 

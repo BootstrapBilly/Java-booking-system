@@ -1,6 +1,8 @@
 package Controllers;
 
 import Constants.Routes;
+import Data.Managers.ActivityType.ActivityType;
+import Data.Managers.ActivityType.ActivityTypeManager;
 import Data.Managers.Lessons.LessonManager;
 import Data.Managers.Lessons.Lessons;
 import Models.Lesson.Lesson;
@@ -11,14 +13,13 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SelectLessonType extends EventHandler implements ActionListener {
-    private CoachesManager coaches = Coaches.getInstance();
+public class SelectActivityType extends EventHandler implements ActionListener {
     private LessonManager lessons = Lessons.getInstance();
+    private ActivityTypeManager activityTypes = ActivityType.getInstance();
 
     private String typeId;
-    private Lesson[] lessonsToDisplay;
 
-    public SelectLessonType() {
+    public SelectActivityType() {
         super ();
     }
 
@@ -30,7 +31,7 @@ public class SelectLessonType extends EventHandler implements ActionListener {
 
     @Override
     public void updateDataStore() {
-        lessons.setCurrentLessonType(typeId);
+        activityTypes.setCurrentActivityType(typeId);
         lessons.setLessonsToDisplayByType();
     }
 

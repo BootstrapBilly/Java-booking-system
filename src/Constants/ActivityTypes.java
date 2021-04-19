@@ -1,8 +1,8 @@
 package Constants;
 
-public final class LessonTypes {
+public final class ActivityTypes {
 
-    private LessonTypes() {}
+    private ActivityTypes() {}
 
     public static final String FOOTBALL = "Football";
     public static final String BASKETBALL = "Basketball";

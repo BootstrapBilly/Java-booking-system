@@ -1,27 +1,27 @@
 package Views.Screens;
 
 import Constants.CardTypes;
-import Controllers.SelectLessonType;
-import Data.Managers.Lessons.LessonManager;
-import Data.Managers.Lessons.Lessons;
+import Controllers.SelectActivityType;
+import Data.Managers.ActivityType.ActivityType;
+import Data.Managers.ActivityType.ActivityTypeManager;
 import Views.SharedComponents.Header;
 import javax.swing.*;
 
 
-public class DisplayLessonTypes {
+public class DisplayActivityTypes {
 
     private MainLayout container;
 
-    public DisplayLessonTypes(){
+    public DisplayActivityTypes(){
 
-        LessonManager lessons = Lessons.getInstance();
+        ActivityTypeManager activityTypes = ActivityType.getInstance();
 
         this.container = new MainLayout(
                 3,
-                lessons.getLessonTypes(),
+                activityTypes.getActivityTypes(),
                 CardTypes.NAVIGATION,
                 new Header(true, "Which type of activity ?"),
-                new SelectLessonType(),
+                new SelectActivityType(),
                 20, 20, false);
     }
 
