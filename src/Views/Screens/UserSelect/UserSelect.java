@@ -1,6 +1,12 @@
 package Views.Screens.UserSelect;
 import static Constants.UserTypes.ADMIN;
 import static Constants.UserTypes.STUDENT;
+
+import Data.Observer.Coaches.CoachesManager;
+import Data.Observer.Students.StudentsManager;
+import Data.Singleton.Coaches;
+import Data.Singleton.Students;
+import Models.User.Student;
 import Models.User.User;
 import Data.Observer.Session.SessionManager;
 import Data.Observer.Users.UsersObserver;
@@ -57,28 +63,47 @@ public class UserSelect {
 
     public void addUsers(){
         SessionManager session = Session.getInstance();
+        StudentsManager students = Students.getInstance();
+        CoachesManager coaches = Coaches.getInstance();
+
         String userType = session.getUserType();
 
-        Iterator<User> usersIterator = users.iterator();
-        while(usersIterator.hasNext()){
+        Views.SharedComponents.User user;
 
-            Views.SharedComponents.User user;
-            User next = usersIterator.next();
-
-            switch(userType){
-                case ADMIN:
-                    if(next.isAdmin()){
-                        user = new Views.SharedComponents.User(next.getID(), next.getName());
-                        userDisplayContainer.add(user.component());
-                    };
-                    break;
-                case STUDENT:
-                    if(next.isStudent()){
-                        user = new Views.SharedComponents.User(next.getID(), next.getName());
+        switch(userType){
+//            case ADMIN:
+//                    user = new Views.SharedComponents.User(next.getID(), next.getName());
+//                    userDisplayContainer.add(user.component());
+//                break;
+            case STUDENT:
+                    ArrayList<Student> studentsList = students.getStudents();
+                    for(Student s : studentsList){
+                        user = new Views.SharedComponents.User(s.getID(), s.getName());
                         userDisplayContainer.add(user.component());
                     }
-            }
+            break;
         }
+
+//        Iterator<User> usersIterator = users.iterator();
+//        while(usersIterator.hasNext()){
+//
+//            Views.SharedComponents.User user;
+//            User next = usersIterator.next();
+//
+//            switch(userType){
+//                case ADMIN:
+//                    if(next.isAdmin()){
+//                        user = new Views.SharedComponents.User(next.getID(), next.getName());
+//                        userDisplayContainer.add(user.component());
+//                    };
+//                    break;
+//                case STUDENT:
+//                    if(next.isStudent()){
+//                        user = new Views.SharedComponents.User(next.getID(), next.getName());
+//                        userDisplayContainer.add(user.component());
+//                    }
+//            }
+//        }
 
         container.add(userDisplayContainer, gbc);
     }

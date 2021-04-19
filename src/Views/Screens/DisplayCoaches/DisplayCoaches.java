@@ -1,5 +1,6 @@
 package Views.Screens.DisplayCoaches;
 
+import Constants.CardTypes;
 import Data.Observer.Coaches.CoachesManager;
 import Data.Singleton.Coaches;
 import Controllers.SelectCoach;
@@ -18,6 +19,7 @@ public class DisplayCoaches {
         this.container = new MainLayout(
                 3,
                 coaches.getCoaches(),
+                CardTypes.NAVIGATION,
                 new Header(true, "Which coach are you looking for ?"),
                 new SelectCoach(),
                 20, 20);

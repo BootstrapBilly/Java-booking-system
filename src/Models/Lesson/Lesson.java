@@ -3,7 +3,7 @@ package Models.Lesson;
 import Models.Util.Classes.Entity;
 import Models.Util.Classes.TimePeriod;
 
-public class Lesson extends Entity{
+public class Lesson extends Entity {
     private Entity venue;
     private TimePeriod time;
     private int maxCapacity;
@@ -15,6 +15,33 @@ public class Lesson extends Entity{
         this.time = time;
         this.maxCapacity = maxCapacity;
         this.currentCapacity = 0;
+    }
+
+    public Entity getVenue() {
+        return venue;
+    }
+
+    public TimePeriod getTime() {
+        return time;
+    }
+
+    public int getMaxCapacity() {
+        return maxCapacity;
+    }
+
+    public int getCurrentCapacity() {
+        return currentCapacity;
+    }
+
+    public void incrementCapacity() {
+        this.currentCapacity += 1;
+    }
+
+    public boolean hasSpace(){
+        if(currentCapacity == maxCapacity){
+            return false;
+        }
+        return true;
     }
 
     public void printDetails(){

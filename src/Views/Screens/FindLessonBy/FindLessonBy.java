@@ -2,7 +2,7 @@ package Views.Screens.FindLessonBy;
 import static Constants.FindLessonBy.COACH;
 import static Constants.FindLessonBy.TYPE;
 
-import Views.SharedComponents.ClickableCard;
+import Views.SharedComponents.NavigationCard;
 import Views.SharedComponents.Header;
 
 import javax.swing.*;
@@ -45,13 +45,13 @@ public class FindLessonBy {
     }
 
     public void addOptions(){
-        ClickableCard coach = new ClickableCard(
+        NavigationCard coach = new NavigationCard(
                 "By " + COACH ,
                 "1",
                 new Controllers.FindLessonBy(),
                 "lessonType.jpg");
 
-        ClickableCard type = new ClickableCard(
+        NavigationCard type = new NavigationCard(
                 "By " + TYPE,
                 "2",
                 new Controllers.FindLessonBy(),

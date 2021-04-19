@@ -1,9 +1,11 @@
 package Data.Observer.Lesson;
 
 import Models.Lesson.Lesson;
+import Models.User.Student;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 
 public class LessonManager implements Subject {
 
@@ -35,8 +37,12 @@ public class LessonManager implements Subject {
         }
     }
 
-    public void addLesson(Lesson lesson){
-        this.lessons.add(lesson);
+    public void bookLesson(String id){
+        for(Lesson l : lessons){
+            if(l.getID() == id){
+                l.incrementCapacity();
+            }
+        }
         notifyObservers();
     }
 
@@ -45,15 +51,22 @@ public class LessonManager implements Subject {
         notifyObservers();
     }
 
-    public void addLessonToDisplay(){
-        this.lessonsToDisplay.add(lessonsToDisplay.get(0));
+
+    public void setLessonsToDisplay(Lesson[] lessons){
+        lessonsToDisplay = new ArrayList<>(Arrays.asList(lessons));
         notifyObservers();
     }
 
+    public Lesson getLessonById(String ID){
+        Iterator<Lesson> lessonsIterator = this.lessons.iterator();
+        while(lessonsIterator.hasNext()){
+            Lesson next = lessonsIterator.next();
+            if(next.getID() == ID){
+                return next;
+            }
+        }
 
-    public void setLessonsToDisplay(Lesson[] lessons){
-        lessonsToDisplay.addAll(Arrays.asList(lessons));
-        notifyObservers();
+        return null;
     }
 
     public ArrayList<Lesson> getLessonsToDisplay() {

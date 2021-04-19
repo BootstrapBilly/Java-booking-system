@@ -1,11 +1,15 @@
 package Controllers;
 
+import Constants.UserTypes;
+import Data.Observer.Students.StudentsManager;
+import Data.Singleton.Students;
 import Models.User.User;
 import Constants.Routes;
 import Data.Observer.Session.SessionManager;
 import Data.Observer.Users.UsersManager;
 import Data.Singleton.Session;
 import Data.Singleton.Users;
+import Models.Util.Classes.Entity;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -14,9 +18,10 @@ import java.awt.event.ActionListener;
 public class SelectUser extends EventHandler implements ActionListener {
     private UsersManager users = Users.getManager();
     private SessionManager session = Session.getInstance();
+    private StudentsManager students = Students.getInstance();
 
     private String userID;
-    private User user;
+    private Entity user;
 
     public SelectUser() {
         super ();
@@ -30,7 +35,11 @@ public class SelectUser extends EventHandler implements ActionListener {
 
     @Override
     public void setupRequiredData(){
-        user = users.getUserById(userID);
+        if(session.getUserType() == UserTypes.STUDENT){
+            user = students.getStudentById(userID);
+        } else {
+            user = users.getUserById(userID);
+        }
     }
 
     @Override

@@ -1,8 +1,10 @@
 package Views.Screens.MainLayout;
 
-import Models.User.Coach;
+import Constants.CardTypes;
+import Models.Lesson.Lesson;
 import Models.Util.Classes.Entity;
-import Views.SharedComponents.ClickableCard;
+import Views.SharedComponents.LessonCard;
+import Views.SharedComponents.NavigationCard;
 import Views.SharedComponents.Header;
 
 import javax.swing.*;
@@ -17,6 +19,7 @@ public class MainLayout {
     private JComponent container;
     private JPanel cardDisplayContainer;
     private ArrayList items;
+    private String cardType;
 
     private Header header;
 
@@ -32,8 +35,9 @@ public class MainLayout {
 
     static GridBagConstraints gbc = new GridBagConstraints();
 
-    public MainLayout(int limitPerRow, ArrayList items, Header header, ActionListener itemClickHandler, int rowPadding, int colPadding) {
+    public MainLayout(int limitPerRow, ArrayList items, String cardType, Header header, ActionListener itemClickHandler, int rowPadding, int colPadding) {
         this.items = items;
+        this.cardType = cardType;
         this.limitPerRow = limitPerRow;
         this.cleanDivide = items.size() % limitPerRow == 0;
         this.numRows = items.size() / limitPerRow;
@@ -43,7 +47,7 @@ public class MainLayout {
         this.colPadding = colPadding;
 
         container = new JPanel();
-        container.setLayout(new GridBagLayout());
+        container.setLayout(new BorderLayout());
 
         cardDisplayContainer =  new JPanel(new GridLayout(numRows + 1, 1, 10, rowPadding));
 
@@ -66,14 +70,14 @@ public class MainLayout {
     }
 
     public void addHeader(){
-        container.add(this.header.component(), gbc);
+        container.add(this.header.component(), BorderLayout.NORTH);
     }
 
     public void displayItems(){
         setUpRows();
         addItemsToRows();
 
-        container.add(cardDisplayContainer, gbc);
+        container.add(cardDisplayContainer, BorderLayout.CENTER);
 
     }
 
@@ -110,11 +114,10 @@ public class MainLayout {
                 currentRow += 1;
             }
 
-            Entity e = (Entity) itemsIterator.next();
-            ClickableCard itemCard = new ClickableCard(e.getName(), e.getID(), itemClickHandler,"lessonType.jpg");
+            JComponent cell = addCell(itemsIterator);
 
             JPanel row = (JPanel) rows.get(currentRow);
-            row.add(itemCard.component());
+            row.add(cell);
 
             if(index + 1 == items.size() && !cleanDivide){
                 for(int i = remainder; i > 0; i-=1){
@@ -127,6 +130,26 @@ public class MainLayout {
             index += 1;
 
         }
+    }
+
+    public JComponent addCell(Iterator it){
+
+        JComponent card = null;
+
+        switch (cardType){
+
+            case CardTypes.LESSON:
+                Lesson l = (Lesson) it.next();
+                LessonCard lc = new LessonCard(l.getName(), l.getID(), itemClickHandler, l);
+                card = lc.component();
+                break;
+            default:
+                Entity e = (Entity) it.next();
+                NavigationCard itemCard = new NavigationCard(e.getName(), e.getID(), itemClickHandler,"lessonType.jpg");
+                card = itemCard.component();
+        }
+
+        return card;
     }
 
     public JComponent component() {
