@@ -92,4 +92,7 @@ public class AppointmentsManager {
         this.parentName = "";
     }
 
+    public ArrayList<Appointment> getAppointments() {
+        return appointments;
+    }
 }

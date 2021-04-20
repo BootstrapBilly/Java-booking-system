@@ -72,4 +72,7 @@ public class LessonManager {
         return lessonsToDisplay;
     }
 
+    public ArrayList<Lesson> getLessons() {
+        return lessons;
+    }
 }

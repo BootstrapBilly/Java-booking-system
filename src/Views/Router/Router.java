@@ -4,6 +4,7 @@ import Constants.Routes;
 import Data.Managers.JFrame.JFrameManager;
 import Views.Main;
 import Views.Screens.*;
+import Views.Screens.DisplayReport.DisplayReport;
 import Views.Screens.UserTypeSelect.UserTypeSelect;
 import Views.Screens.UserTypeSelect.UTS;
 

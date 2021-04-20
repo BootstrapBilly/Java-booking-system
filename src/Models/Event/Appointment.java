@@ -43,4 +43,11 @@ public class Appointment {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public String getParentName() {
+        if(parentName == null){
+            return "Not booked";
+        }
+        return parentName;
+    }
 }

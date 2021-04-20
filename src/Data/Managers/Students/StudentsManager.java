@@ -7,7 +7,6 @@ import java.util.Iterator;
 
 public class StudentsManager {
 
-
     private ArrayList<Student> students;
 
     public StudentsManager() {

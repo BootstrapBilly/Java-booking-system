@@ -42,7 +42,17 @@ public class GenerateEntities {
         studentsManager.addStudent(new Student("James", "2 road rd", "07363526283"));
         studentsManager.addStudent(new Student("Emily", "3 road rd", "07363526284"));
         studentsManager.addStudent(new Student("Sarah", "4 road rd", "07363526285"));
-        studentsManager.addStudent(new Student("Mo", "5 road rd", "07363526286"));
+        studentsManager.addStudent(new Student("Dave", "5 road rd", "07363526286"));
+        studentsManager.addStudent(new Student("David", "6 road rd", "07363526287"));
+        studentsManager.addStudent(new Student("Paulius", "7 road rd", "07363526288"));
+        studentsManager.addStudent(new Student("Dovidas", "8 road rd", "07363526289"));
+        studentsManager.addStudent(new Student("Derek", "9 road rd", "07363526290"));
+        studentsManager.addStudent(new Student("Priya", "10 road rd", "07363526291"));
+        studentsManager.addStudent(new Student("Cho", "11 road rd", "07363526292"));
+        studentsManager.addStudent(new Student("Freddie", "12 road rd", "07363526293"));
+        studentsManager.addStudent(new Student("Phil", "13 road rd", "07363526294"));
+        studentsManager.addStudent(new Student("Francis", "14 road rd", "07363526295"));
+        studentsManager.addStudent(new Student("Francesca", "15 road rd", "07363526296"));
 
         usersManager.addUser(new User("Billy", false, true, false));
         usersManager.addUser(new User("James", false, true, false));

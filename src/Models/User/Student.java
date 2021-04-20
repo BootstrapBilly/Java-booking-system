@@ -28,10 +28,7 @@ public class Student extends Person {
         return false;
     }
 
-    public void printDetails(){
-        System.out.println("ID: " + super.getId());
-        System.out.println("Name: " + super.getName());
-        System.out.println("Address: " + super.getAddress());
-        System.out.println("Phone: " + super.getPhone());
+    public ArrayList<Lesson> getLessons() {
+        return lessons;
     }
 }
