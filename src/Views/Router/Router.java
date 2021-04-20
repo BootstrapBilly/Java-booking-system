@@ -67,6 +67,18 @@ public class Router {
                 DisplayAppointments displayAppointments = new DisplayAppointments();
                 content = displayAppointments.component();
                 break;
+            case Routes.ADMIN_FUNCTION_SELECT:
+                AdminFunctionSelect adminFunctionSelect = new AdminFunctionSelect();
+                content = adminFunctionSelect.component();
+                break;
+            case Routes.REPORT_TYPE_SELECT:
+                ReportTypeSelect reportTypeSelect = new ReportTypeSelect();
+                content = reportTypeSelect.component();
+                break;
+            case Routes.DISPLAY_REPORT:
+                DisplayReport displayReport = new DisplayReport();
+                content = displayReport.component();
+                break;
         }
 
         appContainer.setContentPane(content);

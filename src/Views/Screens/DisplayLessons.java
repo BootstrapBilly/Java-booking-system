@@ -4,6 +4,7 @@ import Constants.CardTypes;
 import Controllers.SelectLesson;
 import Data.Managers.Lessons.LessonManager;
 import Data.Managers.Lessons.Lessons;
+import Views.Screens.Layouts.MainLayout;
 import Views.SharedComponents.Header;
 
 import javax.swing.*;

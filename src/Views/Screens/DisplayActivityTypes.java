@@ -4,6 +4,7 @@ import Constants.CardTypes;
 import Controllers.SelectActivityType;
 import Data.Managers.ActivityType.ActivityType;
 import Data.Managers.ActivityType.ActivityTypeManager;
+import Views.Screens.Layouts.MainLayout;
 import Views.SharedComponents.Header;
 import javax.swing.*;
 

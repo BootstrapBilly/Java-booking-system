@@ -1,4 +1,4 @@
-package Views.Screens;
+package Views.Screens.Layouts;
 
 import Constants.CardTypes;
 import Models.Event.Appointment;

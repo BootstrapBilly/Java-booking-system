@@ -4,6 +4,7 @@ import Constants.CardTypes;
 import Controllers.Appointment.SelectAppointment;
 import Data.Managers.Appointments.Appointments;
 import Data.Managers.Appointments.AppointmentsManager;
+import Views.Screens.Layouts.MainLayout;
 import Views.SharedComponents.Header;
 
 import javax.swing.*;

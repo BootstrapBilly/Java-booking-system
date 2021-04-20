@@ -1,5 +1,6 @@
 package Controllers;
 
+import static Constants.UserTypes.ADMIN;
 import static Constants.UserTypes.PARENT;
 
 import Constants.Routes;
@@ -32,6 +33,9 @@ public class SelectUserType extends EventHandler implements ActionListener {
     public String handleNextRoute(){
         if(userType == PARENT){
             return Routes.FIND_LESSON_BY_SELECT;
+        }
+        if(userType == ADMIN){
+            return Routes.ADMIN_FUNCTION_SELECT;
         }
         return Routes.USER_SELECT;
     }

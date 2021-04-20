@@ -4,6 +4,7 @@ import Constants.CardTypes;
 import Data.Managers.Coaches.CoachesManager;
 import Data.Managers.Coaches.Coaches;
 import Controllers.SelectCoach;
+import Views.Screens.Layouts.MainLayout;
 import Views.SharedComponents.Header;
 import javax.swing.*;
 
