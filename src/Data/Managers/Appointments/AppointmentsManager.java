@@ -37,6 +37,20 @@ public class AppointmentsManager {
         this.appointmentsToDisplay = appointmentsToDisplay;
     }
 
+        public void setAppointmentsToDisplayByType(){
+        ActivityTypeManager activityTypes = ActivityType.getInstance();
+        ArrayList appointmentsToDisplay = new ArrayList();
+        Iterator<Appointment> appointmentsIterator = this.appointments.iterator();
+        while(appointmentsIterator.hasNext()){
+            Appointment next = appointmentsIterator.next();
+            if(next.getCoach().hasExpertise(activityTypes.getCurrentActivityType())){
+                appointmentsToDisplay.add(next);
+            }
+        }
+        this.appointmentsToDisplay = appointmentsToDisplay;
+
+    }
+
     public ArrayList<Appointment> getAppointmentsToDisplay() {
         return appointmentsToDisplay;
     }
@@ -66,20 +80,6 @@ public class AppointmentsManager {
 
         return null;
     }
-
-//    public void setAppointmentsToDisplayByType(){
-//        ActivityTypeManager activityTypes = ActivityType.getInstance();
-//        ArrayList appointmentsToDisplay = new ArrayList();
-//        Iterator<Appointment> appointmentsIterator = this.appointments.iterator();
-//        while(appointmentsIterator.hasNext()){
-//            Appointment next = appointmentsIterator.next();
-//            if(next.getName() == activityTypes.getCurrentActivityType()){
-//                appointmentsToDisplay.add(next);
-//            }
-//        }
-//        this.appointmentsToDisplay = appointmentsToDisplay;
-//
-//    }
 
     public void setParentName(String parentName) {
         this.parentName = parentName;

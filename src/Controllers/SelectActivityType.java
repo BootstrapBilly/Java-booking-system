@@ -40,7 +40,7 @@ public class SelectActivityType extends EventHandler implements ActionListener {
 
     @Override
     public void setupRequiredData(){
-        if(session.getSession() == UserTypes.PARENT){
+        if(session.getUserType() == UserTypes.PARENT){
             isParent = true;
         }
     }
@@ -49,8 +49,7 @@ public class SelectActivityType extends EventHandler implements ActionListener {
     public void updateDataStore() {
         activityTypes.setCurrentActivityType(typeId);
         if(isParent){
-//            appointments.setAppointmentsToDisplayByType();
-            System.out.println("lol");
+            appointments.setAppointmentsToDisplayByType();
         } else {
             lessons.setLessonsToDisplayByType();
         }
@@ -59,6 +58,10 @@ public class SelectActivityType extends EventHandler implements ActionListener {
 
     @Override
     public String handleNextRoute() {
-        return Routes.DISPLAY_LESSONS;
+        if(isParent){
+            return Routes.DISPLAY_APPOINTMENTS;
+        } else {
+            return Routes.DISPLAY_LESSONS;
+        }
     }
 }

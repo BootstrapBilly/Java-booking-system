@@ -52,6 +52,12 @@ public class AppointmentCard {
         JPanel body = new JPanel(new BorderLayout());
         body.setBorder(new EmptyBorder(10,10,10,10));
 
+        JPanel coachContainer = new JPanel(new GridBagLayout());
+        JLabel coach = new JLabel(appointment.getCoach().getName());
+        setFontSize(coach, 16);
+        coachContainer.add(coach);
+        body.add(coachContainer, BorderLayout.NORTH);
+
         if(appointment.getStatus() == AppointmentStatus.ADDNAME) {
             JLabel prompt = new JLabel("What is your name ?");
             JTextField input = new JTextField();
