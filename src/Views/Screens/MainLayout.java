@@ -1,8 +1,10 @@
 package Views.Screens;
 
 import Constants.CardTypes;
+import Models.Event.Appointment;
 import Models.Lesson.Lesson;
 import Models.Util.Classes.Entity;
+import Views.SharedComponents.AppointmentCard;
 import Views.SharedComponents.LessonCard;
 import Views.SharedComponents.NavigationCard;
 import Views.SharedComponents.Header;
@@ -154,6 +156,11 @@ public class MainLayout {
                 Lesson l = (Lesson) it.next();
                 LessonCard lc = new LessonCard(l.getName(), l.getID(), itemClickHandler, l);
                 card = lc.component();
+                break;
+            case CardTypes.APPOINTMENT:
+                Appointment a = (Appointment) it.next();
+                AppointmentCard ac = new AppointmentCard(a.getID(), itemClickHandler, a);
+                card = ac.component();
                 break;
             default:
                 Entity e = (Entity) it.next();

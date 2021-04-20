@@ -20,4 +20,8 @@ public class Coach extends Person {
     public Lesson[] getLessons(){
         return this.lessons;
     }
+
+    public Appointment[] getAvailableAppointments() {
+        return availableAppointments;
+    }
 }

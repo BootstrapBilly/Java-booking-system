@@ -1,16 +1,16 @@
-//
-//package Data.Managers.Appointments;
-//
-//public class Appointments {
-//    private static AppointmentManager uniqueInstance;
-//
-//    private Appointments(){};
-//
-//    public static AppointmentManager getInstance(){
-//        if(uniqueInstance == null){
-//            AppointmentManager appointmentManager = new AppointmentManager();
-//            uniqueInstance = appointmentManager;
-//        }
-//        return uniqueInstance;
-//    }
-//}
+
+package Data.Managers.Appointments;
+
+public class Appointments {
+    private static AppointmentsManager uniqueInstance;
+
+    private Appointments(){};
+
+    public static AppointmentsManager getInstance(){
+        if(uniqueInstance == null){
+            AppointmentsManager appointmentManager = new AppointmentsManager();
+            uniqueInstance = appointmentManager;
+        }
+        return uniqueInstance;
+    }
+}

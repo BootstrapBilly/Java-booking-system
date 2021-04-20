@@ -1,8 +1,8 @@
 package Constants;
 
-public final class FindLessonBy {
+public final class FindEventBy {
 
-    private FindLessonBy() {}
+    private FindEventBy() {}
 
     public static final String COACH = "Coach";
     public static final String TYPE = "Activity";

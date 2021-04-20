@@ -5,12 +5,12 @@ import Constants.Routes;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import static Constants.FindLessonBy.TYPE;
-import static Constants.FindLessonBy.COACH;
 
-public class FindLessonBy extends EventHandler implements ActionListener {
+import static Constants.FindEventBy.COACH;
+
+public class FindEventBy extends EventHandler implements ActionListener {
     private String choice;
-    public FindLessonBy() {
+    public FindEventBy() {
         super ();
     }
 
@@ -24,7 +24,7 @@ public class FindLessonBy extends EventHandler implements ActionListener {
         if(choice == COACH){
             return Routes.DISPLAY_COACHES;
         }
-        else return Routes.DISPLAY_LESSON_TYPES;
+        else return Routes.DISPLAY_ACTIVITY_TYPES;
     }
 
 }

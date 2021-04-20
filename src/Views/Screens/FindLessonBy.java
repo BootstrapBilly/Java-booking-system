@@ -1,8 +1,9 @@
 package Views.Screens;
-import static Constants.FindLessonBy.COACH;
-import static Constants.FindLessonBy.TYPE;
+import static Constants.FindEventBy.COACH;
+import static Constants.FindEventBy.TYPE;
 
 import Constants.UserTypes;
+import Controllers.FindEventBy;
 import Data.Managers.Session.Session;
 import Data.Managers.Session.SessionManager;
 import Views.SharedComponents.NavigationCard;
@@ -53,13 +54,13 @@ public class FindLessonBy {
         NavigationCard coach = new NavigationCard(
                 "By " + COACH ,
                 COACH,
-                new Controllers.FindLessonBy(),
+                new FindEventBy(),
                 "lessonType.jpg");
 
         NavigationCard type = new NavigationCard(
                 "By " + TYPE,
                 TYPE,
-                new Controllers.FindLessonBy(),
+                new FindEventBy(),
                 "lessonType.jpg");
 
         GridBagConstraints optionsGbc = new GridBagConstraints();

@@ -3,13 +3,9 @@ package Views.Router;
 import Constants.Routes;
 import Data.Managers.JFrame.JFrameManager;
 import Views.Main;
-import Views.Screens.DisplayCoaches;
-import Views.Screens.DisplayActivityTypes;
-import Views.Screens.DisplayLessons;
-import Views.Screens.FindLessonBy;
+import Views.Screens.*;
 import Views.Screens.UserTypeSelect.UserTypeSelect;
 import Views.Screens.UserTypeSelect.UTS;
-import Views.Screens.UserSelect;
 
 import javax.swing.*;
 import java.util.Stack;
@@ -63,9 +59,13 @@ public class Router {
                 DisplayLessons displayLessons = new DisplayLessons();
                 content = displayLessons.component();
                 break;
-                case Routes.DISPLAY_LESSON_TYPES:
+                case Routes.DISPLAY_ACTIVITY_TYPES:
                 DisplayActivityTypes displayActivityTypes = new DisplayActivityTypes();
                 content = displayActivityTypes.component();
+                break;
+                case Routes.DISPLAY_APPOINTMENTS:
+                DisplayAppointments displayAppointments = new DisplayAppointments();
+                content = displayAppointments.component();
                 break;
         }
 

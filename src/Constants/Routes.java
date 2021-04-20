@@ -9,5 +9,6 @@ public final class Routes {
     public static final String FIND_LESSON_BY_SELECT = "FIND_LESSON_BY_SELECT";
     public static final String DISPLAY_COACHES = "DISPLAY_COACHES";
     public static final String DISPLAY_LESSONS = "DISPLAY_LESSONS";
-    public static final String DISPLAY_LESSON_TYPES = "DISPLAY_LESSON_TYPES";
+    public static final String DISPLAY_ACTIVITY_TYPES = "DISPLAY_ACTIVITY_TYPES";
+    public static final String DISPLAY_APPOINTMENTS = "DISPLAY_APPOINTMENTS";
 }
