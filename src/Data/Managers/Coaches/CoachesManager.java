@@ -8,6 +8,7 @@ import java.util.Iterator;
 public class CoachesManager {
 
     private ArrayList<Coach> coaches;
+    private Coach selectedCoach;
 
     public CoachesManager() {
         coaches = new ArrayList<Coach>();
@@ -34,4 +35,11 @@ public class CoachesManager {
         return null;
     }
 
+    public Coach getSelectedCoach() {
+        return selectedCoach;
+    }
+
+    public void setSelectedCoach(Coach selectedCoach) {
+        this.selectedCoach = selectedCoach;
+    }
 }

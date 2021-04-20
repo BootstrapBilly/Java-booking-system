@@ -26,7 +26,6 @@ public class SelectCoach extends EventHandler implements ActionListener {
 
     private String coachID;
     private Lesson[] lessonsToDisplay;
-    private Appointment[] appointmentsToDisplay;
 
     public SelectCoach() {
         super ();
@@ -43,9 +42,7 @@ public class SelectCoach extends EventHandler implements ActionListener {
         if(userType == UserTypes.PARENT){
             isParent = true;
         }
-        if(isParent){
-            appointmentsToDisplay = coaches.getCoachById(coachID).getAvailableAppointments();
-        } else {
+        if(!isParent) {
             lessonsToDisplay = coaches.getCoachById(coachID).getLessons();
         }
     }
@@ -53,7 +50,8 @@ public class SelectCoach extends EventHandler implements ActionListener {
     @Override
     public void updateDataStore() {
         if(isParent){
-            appointments.setAppointmentsToDisplay(appointmentsToDisplay);
+            coaches.setSelectedCoach(coaches.getCoachById(coachID));
+            appointments.setAppointmentsToDisplayByCoach();
         } else {
             lessons.setLessonsToDisplay(lessonsToDisplay);
         }

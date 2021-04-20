@@ -18,7 +18,6 @@ class CoachTest {
 
     Coach testCoach = new Coach("Terry", "1 lane road", "07123456789",
             new String[] {ActivityTypes.FOOTBALL},
-            new Appointment[] {}, new Appointment[] {},
             new Lesson[] {f1,b1});
 
     @Test

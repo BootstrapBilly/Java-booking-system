@@ -1,10 +1,15 @@
 package Controllers;
 
 import Constants.Routes;
+import Constants.UserTypes;
 import Data.Managers.ActivityType.ActivityType;
 import Data.Managers.ActivityType.ActivityTypeManager;
+import Data.Managers.Appointments.Appointments;
+import Data.Managers.Appointments.AppointmentsManager;
 import Data.Managers.Lessons.LessonManager;
 import Data.Managers.Lessons.Lessons;
+import Data.Managers.Session.Session;
+import Data.Managers.Session.SessionManager;
 import Models.Lesson.Lesson;
 import Data.Managers.Coaches.CoachesManager;
 import Data.Managers.Coaches.Coaches;
@@ -15,7 +20,11 @@ import java.awt.event.ActionListener;
 
 public class SelectActivityType extends EventHandler implements ActionListener {
     private LessonManager lessons = Lessons.getInstance();
+    private AppointmentsManager appointments = Appointments.getInstance();
     private ActivityTypeManager activityTypes = ActivityType.getInstance();
+    private SessionManager session = Session.getInstance();
+
+    private Boolean isParent = false;
 
     private String typeId;
 
@@ -30,9 +39,22 @@ public class SelectActivityType extends EventHandler implements ActionListener {
     }
 
     @Override
+    public void setupRequiredData(){
+        if(session.getSession() == UserTypes.PARENT){
+            isParent = true;
+        }
+    }
+
+    @Override
     public void updateDataStore() {
         activityTypes.setCurrentActivityType(typeId);
-        lessons.setLessonsToDisplayByType();
+        if(isParent){
+//            appointments.setAppointmentsToDisplayByType();
+            System.out.println("lol");
+        } else {
+            lessons.setLessonsToDisplayByType();
+        }
+
     }
 
     @Override

@@ -1,6 +1,10 @@
 package Data.Managers.Appointments;
 
 import Constants.AppointmentStatus;
+import Data.Managers.ActivityType.ActivityType;
+import Data.Managers.ActivityType.ActivityTypeManager;
+import Data.Managers.Coaches.Coaches;
+import Data.Managers.Coaches.CoachesManager;
 import Models.Event.Appointment;
 import Models.Lesson.Lesson;
 
@@ -13,14 +17,24 @@ public class AppointmentsManager {
 
     private ArrayList<Appointment> appointments;
     private ArrayList<Appointment> appointmentsToDisplay;
+    private String parentName = "";
 
     public AppointmentsManager() {
         appointments = new ArrayList<Appointment>();
         appointmentsToDisplay = new ArrayList<Appointment>();
     }
 
-    public void setAppointmentsToDisplay(Appointment[] appointments){
-        appointmentsToDisplay = new ArrayList<>(Arrays.asList(appointments));
+    public void setAppointmentsToDisplayByCoach(){
+        CoachesManager coaches = Coaches.getInstance();
+        ArrayList appointmentsToDisplay = new ArrayList();
+        Iterator<Appointment> appointmentsIterator = this.appointments.iterator();
+        while(appointmentsIterator.hasNext()){
+            Appointment next = appointmentsIterator.next();
+            if(next.getCoach().getName() == coaches.getSelectedCoach().getName()){
+                appointmentsToDisplay.add(next);
+            }
+        }
+        this.appointmentsToDisplay = appointmentsToDisplay;
     }
 
     public ArrayList<Appointment> getAppointmentsToDisplay() {
@@ -40,6 +54,7 @@ public class AppointmentsManager {
         Appointment app = getAppointmentById(appointmentId);
         app.setStatus(AppointmentStatus.AVAILABLE);
     }
+
     public Appointment getAppointmentById(String ID){
         Iterator<Appointment> appointmentsIterator = this.appointments.iterator();
         while(appointmentsIterator.hasNext()){
@@ -50,6 +65,31 @@ public class AppointmentsManager {
         }
 
         return null;
+    }
+
+//    public void setAppointmentsToDisplayByType(){
+//        ActivityTypeManager activityTypes = ActivityType.getInstance();
+//        ArrayList appointmentsToDisplay = new ArrayList();
+//        Iterator<Appointment> appointmentsIterator = this.appointments.iterator();
+//        while(appointmentsIterator.hasNext()){
+//            Appointment next = appointmentsIterator.next();
+//            if(next.getName() == activityTypes.getCurrentActivityType()){
+//                appointmentsToDisplay.add(next);
+//            }
+//        }
+//        this.appointmentsToDisplay = appointmentsToDisplay;
+//
+//    }
+
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
+
+    public void confirmBooking(String appointmentId){
+        Appointment app = getAppointmentById(appointmentId);
+        app.setStatus(AppointmentStatus.BOOKED);
+        app.setParentName(this.parentName);
+        this.parentName = "";
     }
 
 }

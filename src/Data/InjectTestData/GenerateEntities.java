@@ -57,139 +57,6 @@ public class GenerateEntities {
         // parent
         usersManager.addUser(new User("Parent", false, false, true));
 
-        // appointments
-        // week 1
-        Appointment w1c1a1 = new Appointment(appointmentTimes.get(0));
-        Appointment w1c1a2 = new Appointment(appointmentTimes.get(1));
-        Appointment w1c1a3 = new Appointment(appointmentTimes.get(2));
-        Appointment w1c2a1 = new Appointment(appointmentTimes.get(3));
-        Appointment w1c2a2 = new Appointment(appointmentTimes.get(4));
-        Appointment w1c2a3 = new Appointment(appointmentTimes.get(5));
-        Appointment w1c3a1 = new Appointment(appointmentTimes.get(6));
-        Appointment w1c3a2 = new Appointment(appointmentTimes.get(7));
-        Appointment w1c3a3 = new Appointment(appointmentTimes.get(8));
-        Appointment w1c4a1 = new Appointment(appointmentTimes.get(9));
-        Appointment w1c4a2 = new Appointment(appointmentTimes.get(10));
-        Appointment w1c4a3 = new Appointment(appointmentTimes.get(11));
-        Appointment w1c5a1 = new Appointment(appointmentTimes.get(12));
-        Appointment w1c5a2 = new Appointment(appointmentTimes.get(13));
-        Appointment w1c5a3 = new Appointment(appointmentTimes.get(14));
-        Appointment w1c6a1 = new Appointment(appointmentTimes.get(15));
-        Appointment w1c6a2 = new Appointment(appointmentTimes.get(16));
-        Appointment w1c6a3 = new Appointment(appointmentTimes.get(17));
-        Appointment w1c7a1 = new Appointment(appointmentTimes.get(18));
-        Appointment w1c7a2 = new Appointment(appointmentTimes.get(19));
-        Appointment w1c7a3 = new Appointment(appointmentTimes.get(20));
-        Appointment w1c8a1 = new Appointment(appointmentTimes.get(21));
-        Appointment w1c8a2 = new Appointment(appointmentTimes.get(22));
-        Appointment w1c8a3 = new Appointment(appointmentTimes.get(23));
-        Appointment w1c9a1 = new Appointment(appointmentTimes.get(24));
-        Appointment w1c9a2 = new Appointment(appointmentTimes.get(25));
-        Appointment w1c9a3 = new Appointment(appointmentTimes.get(26));
-
-        Appointment[] w1app = {w1c1a1, w1c1a2, w1c1a3, w1c2a1, w1c2a2, w1c2a3, w1c3a1, w1c3a2, w1c3a3, w1c4a1, w1c4a2, w1c4a3, w1c5a1, w1c5a2, w1c5a3,
-                w1c6a1, w1c6a2, w1c6a3, w1c7a1, w1c7a2, w1c7a3, w1c8a1, w1c8a2, w1c8a3, w1c9a1, w1c9a2, w1c9a3};
-        appointmentsManager.addAppointments(w1app);
-
-        // week 2
-        Appointment w2c1a1 = new Appointment(appointmentTimes.get(27));
-        Appointment w2c1a2 = new Appointment(appointmentTimes.get(28));
-        Appointment w2c1a3 = new Appointment(appointmentTimes.get(29));
-        Appointment w2c2a1 = new Appointment(appointmentTimes.get(30));
-        Appointment w2c2a2 = new Appointment(appointmentTimes.get(31));
-        Appointment w2c2a3 = new Appointment(appointmentTimes.get(32));
-        Appointment w2c3a1 = new Appointment(appointmentTimes.get(33));
-        Appointment w2c3a2 = new Appointment(appointmentTimes.get(34));
-        Appointment w2c3a3 = new Appointment(appointmentTimes.get(35));
-        Appointment w2c4a1 = new Appointment(appointmentTimes.get(36));
-        Appointment w2c4a2 = new Appointment(appointmentTimes.get(37));
-        Appointment w2c4a3 = new Appointment(appointmentTimes.get(38));
-        Appointment w2c5a1 = new Appointment(appointmentTimes.get(39));
-        Appointment w2c5a2 = new Appointment(appointmentTimes.get(40));
-        Appointment w2c5a3 = new Appointment(appointmentTimes.get(41));
-        Appointment w2c6a1 = new Appointment(appointmentTimes.get(42));
-        Appointment w2c6a2 = new Appointment(appointmentTimes.get(43));
-        Appointment w2c6a3 = new Appointment(appointmentTimes.get(44));
-        Appointment w2c7a1 = new Appointment(appointmentTimes.get(45));
-        Appointment w2c7a2 = new Appointment(appointmentTimes.get(46));
-        Appointment w2c7a3 = new Appointment(appointmentTimes.get(47));
-        Appointment w2c8a1 = new Appointment(appointmentTimes.get(48));
-        Appointment w2c8a2 = new Appointment(appointmentTimes.get(49));
-        Appointment w2c8a3 = new Appointment(appointmentTimes.get(50));
-        Appointment w2c9a1 = new Appointment(appointmentTimes.get(51));
-        Appointment w2c9a2 = new Appointment(appointmentTimes.get(52));
-        Appointment w2c9a3 = new Appointment(appointmentTimes.get(53));
-
-        Appointment[] w2app = {w2c1a1, w2c1a2, w2c1a3, w2c2a1, w2c2a2, w2c2a3, w2c3a1, w2c3a2, w2c3a3, w2c4a1, w2c4a2, w2c4a3, w2c5a1, w2c5a2, w2c5a3,
-                w2c6a1, w2c6a2, w2c6a3, w2c7a1, w2c7a2, w2c7a3, w2c8a1, w2c8a2, w2c8a3, w2c9a1, w2c9a2, w2c9a3};
-        appointmentsManager.addAppointments(w2app);
-
-        Appointment w3c1a1 = new Appointment(appointmentTimes.get(54));
-        Appointment w3c1a2 = new Appointment(appointmentTimes.get(55));
-        Appointment w3c1a3 = new Appointment(appointmentTimes.get(56));
-        Appointment w3c2a1 = new Appointment(appointmentTimes.get(57));
-        Appointment w3c2a2 = new Appointment(appointmentTimes.get(58));
-        Appointment w3c2a3 = new Appointment(appointmentTimes.get(59));
-        Appointment w3c3a1 = new Appointment(appointmentTimes.get(60));
-        Appointment w3c3a2 = new Appointment(appointmentTimes.get(61));
-        Appointment w3c3a3 = new Appointment(appointmentTimes.get(62));
-        Appointment w3c4a1 = new Appointment(appointmentTimes.get(63));
-        Appointment w3c4a2 = new Appointment(appointmentTimes.get(64));
-        Appointment w3c4a3 = new Appointment(appointmentTimes.get(65));
-        Appointment w3c5a1 = new Appointment(appointmentTimes.get(66));
-        Appointment w3c5a2 = new Appointment(appointmentTimes.get(67));
-        Appointment w3c5a3 = new Appointment(appointmentTimes.get(68));
-        Appointment w3c6a1 = new Appointment(appointmentTimes.get(69));
-        Appointment w3c6a2 = new Appointment(appointmentTimes.get(70));
-        Appointment w3c6a3 = new Appointment(appointmentTimes.get(71));
-        Appointment w3c7a1 = new Appointment(appointmentTimes.get(72));
-        Appointment w3c7a2 = new Appointment(appointmentTimes.get(73));
-        Appointment w3c7a3 = new Appointment(appointmentTimes.get(74));
-        Appointment w3c8a1 = new Appointment(appointmentTimes.get(75));
-        Appointment w3c8a2 = new Appointment(appointmentTimes.get(76));
-        Appointment w3c8a3 = new Appointment(appointmentTimes.get(77));
-        Appointment w3c9a1 = new Appointment(appointmentTimes.get(78));
-        Appointment w3c9a2 = new Appointment(appointmentTimes.get(79));
-        Appointment w3c9a3 = new Appointment(appointmentTimes.get(80));
-
-        Appointment[] w3app = {w3c1a1, w3c1a2, w3c1a3, w3c2a1, w3c2a2, w3c2a3, w3c3a1, w3c3a2, w3c3a3, w3c4a1, w3c4a2, w3c4a3, w3c5a1, w3c5a2, w3c5a3,
-                w3c6a1, w3c6a2, w3c6a3, w3c7a1, w3c7a2, w3c7a3, w3c8a1, w3c8a2, w3c8a3, w3c9a1, w3c9a2, w3c9a3};
-        appointmentsManager.addAppointments(w3app);
-
-        Appointment w4c1a1 = new Appointment(appointmentTimes.get(81));
-        Appointment w4c1a2 = new Appointment(appointmentTimes.get(82));
-        Appointment w4c1a3 = new Appointment(appointmentTimes.get(83));
-        Appointment w4c2a1 = new Appointment(appointmentTimes.get(84));
-        Appointment w4c2a2 = new Appointment(appointmentTimes.get(86));
-        Appointment w4c2a3 = new Appointment(appointmentTimes.get(86));
-        Appointment w4c3a1 = new Appointment(appointmentTimes.get(87));
-        Appointment w4c3a2 = new Appointment(appointmentTimes.get(88));
-        Appointment w4c3a3 = new Appointment(appointmentTimes.get(89));
-        Appointment w4c4a1 = new Appointment(appointmentTimes.get(90));
-        Appointment w4c4a2 = new Appointment(appointmentTimes.get(91));
-        Appointment w4c4a3 = new Appointment(appointmentTimes.get(92));
-        Appointment w4c5a1 = new Appointment(appointmentTimes.get(93));
-        Appointment w4c5a2 = new Appointment(appointmentTimes.get(94));
-        Appointment w4c5a3 = new Appointment(appointmentTimes.get(95));
-        Appointment w4c6a1 = new Appointment(appointmentTimes.get(96));
-        Appointment w4c6a2 = new Appointment(appointmentTimes.get(97));
-        Appointment w4c6a3 = new Appointment(appointmentTimes.get(98));
-        Appointment w4c7a1 = new Appointment(appointmentTimes.get(99));
-        Appointment w4c7a2 = new Appointment(appointmentTimes.get(100));
-        Appointment w4c7a3 = new Appointment(appointmentTimes.get(101));
-        Appointment w4c8a1 = new Appointment(appointmentTimes.get(102));
-        Appointment w4c8a2 = new Appointment(appointmentTimes.get(103));
-        Appointment w4c8a3 = new Appointment(appointmentTimes.get(104));
-        Appointment w4c9a1 = new Appointment(appointmentTimes.get(105));
-        Appointment w4c9a2 = new Appointment(appointmentTimes.get(106));
-        Appointment w4c9a3 = new Appointment(appointmentTimes.get(107));
-
-        appointmentTimes.get(107).printDetails();
-
-                Appointment[] w4app = {w4c1a1, w4c1a2, w4c1a3, w4c2a1, w4c2a2, w4c2a3, w4c3a1, w4c3a2, w4c3a3, w4c4a1, w4c4a2, w4c4a3, w4c5a1, w4c5a2, w4c5a3,
-                w4c6a1, w4c6a2, w4c6a3, w4c7a1, w4c7a2, w4c7a3, w4c8a1, w4c8a2, w4c8a3, w4c9a1, w4c9a2, w4c9a3};
-        appointmentsManager.addAppointments(w4app);
-
         // lessons
         // week 1
         Lesson f11 = new Lesson(ActivityTypes.FOOTBALL, new Entity("Football pitch"), lessonTimes.get(0), LessonCapacity.FOOTBALL);
@@ -292,50 +159,181 @@ public class GenerateEntities {
         lessonManager.addLessons(week4);
 
         // coaches
-        coachesManager.addCoach(new Coach("Terry", "1 lane road", "07123456789",
+        Coach terry = new Coach("Terry", "1 lane road", "07123456789",
                 new String[] {ActivityTypes.FOOTBALL},
-                new Appointment[] {w1c1a1, w1c1a2, w1c1a3, w2c1a1, w2c1a2, w2c1a3, w3c1a1, w3c1a2, w3c1a3, w4c1a1, w4c1a2, w4c1a3}, new Appointment[] {},
-                new Lesson[] {f11, f12, f21, f22, f31, f32, f41, f42}));
+                new Lesson[] {f11, f12, f21, f22, f31, f32, f41, f42});
+        coachesManager.addCoach(terry);
 
-        coachesManager.addCoach(new Coach("Maria", "2 road avenue", "07987654321",
-                new String[] {ActivityTypes.SWIMMING, },
-                new Appointment[] {}, new Appointment[] {},
-                new Lesson[] {s11, s12, s13, s21, s22, s23, c31, c32, c33}));
+        Coach maria = new Coach("Maria", "2 road avenue", "07987654321",
+                new String[] {ActivityTypes.SWIMMING},
+                new Lesson[] {s11, s12, s13, s21, s22, s23, c31, c32, c33});
+        coachesManager.addCoach(maria);
 
-        coachesManager.addCoach(new Coach("Nina", "3 avenue crescent", "07974835932",
+        Coach nina = new Coach("Nina", "3 avenue crescent", "07974835932",
                 new String[] {ActivityTypes.BASKETBALL},
-                new Appointment[] {}, new Appointment[] {},
-                new Lesson[] {b11, b12, b13, b21, b22, b23, b31, b32, b33}));
+                new Lesson[] {b11, b12, b13, b21, b22, b23, b31, b32, b33});
+        coachesManager.addCoach(nina);
 
-        coachesManager.addCoach(new Coach("Hassan", "4 random road", "07972084520",
+        Coach hassan = new Coach("Hassan", "4 random road", "07972084520",
                 new String[] {ActivityTypes.BADMINTON, ActivityTypes.FOOTBALL},
-                new Appointment[] {}, new Appointment[] {},
-                new Lesson[] {f13, f23, f33, f43, bm11, bm12, bm21, bm22, bm31}));
+                new Lesson[] {f13, f23, f33, f43, bm11, bm12, bm21, bm22, bm31});
+        coachesManager.addCoach(hassan);
 
-        coachesManager.addCoach(new Coach("Demi", "5 long lane", "07983649573",
+        Coach demi = new Coach("Demi", "5 long lane", "07983649573",
                 new String[] {ActivityTypes.GYMNASTICS, ActivityTypes.SWIMMING},
-                new Appointment[] {}, new Appointment[] {},
-                new Lesson[] {s31, s32, s33, s41, s42, s43, g11, g12, g13}));
+                new Lesson[] {s31, s32, s33, s41, s42, s43, g11, g12, g13});
+        coachesManager.addCoach(demi);
 
-        coachesManager.addCoach(new Coach("Jeff", "6 road road", "07983634573",
+        Coach jeff = new Coach("Jeff", "6 road road", "07983634573",
                 new String[] {ActivityTypes.CRICKET, ActivityTypes.BADMINTON},
-                new Appointment[] {}, new Appointment[] {},
-                new Lesson[] {c11, c12, c13, c21, c22, c23, bm13, bm14}));
+                new Lesson[] {c11, c12, c13, c21, c22, c23, bm13, bm14});
+        coachesManager.addCoach(jeff);
 
-        coachesManager.addCoach(new Coach("Martha", "7 lane avenue", "07983564573",
+        Coach martha = new Coach("Martha", "7 lane avenue", "07983564573",
                 new String[] {ActivityTypes.CRICKET, ActivityTypes.BADMINTON, ActivityTypes.BASKETBALL},
-                new Appointment[] {}, new Appointment[] {},
-                new Lesson[] {c41, c42, c43, bm32, bm41, bm42, b41, b42, b43}));
+                new Lesson[] {c41, c42, c43, bm32, bm41, bm42, b41, b42, b43});
+        coachesManager.addCoach(martha);
 
-        coachesManager.addCoach(new Coach("Jane", "8 that road", "07983567382",
+        Coach jane = new Coach("Jane", "8 that road", "07983567382",
                 new String[] {ActivityTypes.GYMNASTICS},
-                new Appointment[] {}, new Appointment[] {},
-                new Lesson[] {g14, g21, g22, g23, g24, g31, g32, g33, g34}));
+                new Lesson[] {g14, g21, g22, g23, g24, g31, g32, g33, g34});
+        coachesManager.addCoach(jane);
 
-        coachesManager.addCoach(new Coach("Addi", "9 last avenue", "079835681930",
+        Coach addi = new Coach("Addi", "9 last avenue", "079835681930",
                 new String[] {ActivityTypes.GYMNASTICS, ActivityTypes.BADMINTON},
-                new Appointment[] {}, new Appointment[] {},
-                new Lesson[] {g41, g42, g43, g44, bm23, bm24, bm33, bm34, bm43, bm44}));
+                new Lesson[] {g41, g42, g43, g44, bm23, bm24, bm33, bm34, bm43, bm44});
+        coachesManager.addCoach(addi);
+
+        // appointments
+        // week 1
+        Appointment w1c1a1 = new Appointment(appointmentTimes.get(0), terry);
+        Appointment w1c1a2 = new Appointment(appointmentTimes.get(1), terry);
+        Appointment w1c1a3 = new Appointment(appointmentTimes.get(2), terry);
+        Appointment w1c2a1 = new Appointment(appointmentTimes.get(3), maria);
+        Appointment w1c2a2 = new Appointment(appointmentTimes.get(4), maria);
+        Appointment w1c2a3 = new Appointment(appointmentTimes.get(5), maria);
+        Appointment w1c3a1 = new Appointment(appointmentTimes.get(6), nina);
+        Appointment w1c3a2 = new Appointment(appointmentTimes.get(7), nina);
+        Appointment w1c3a3 = new Appointment(appointmentTimes.get(8), nina);
+        Appointment w1c4a1 = new Appointment(appointmentTimes.get(9), hassan);
+        Appointment w1c4a2 = new Appointment(appointmentTimes.get(10), hassan);
+        Appointment w1c4a3 = new Appointment(appointmentTimes.get(11), hassan);
+        Appointment w1c5a1 = new Appointment(appointmentTimes.get(12), demi);
+        Appointment w1c5a2 = new Appointment(appointmentTimes.get(13), demi);
+        Appointment w1c5a3 = new Appointment(appointmentTimes.get(14), demi);
+        Appointment w1c6a1 = new Appointment(appointmentTimes.get(15), jeff);
+        Appointment w1c6a2 = new Appointment(appointmentTimes.get(16), jeff);
+        Appointment w1c6a3 = new Appointment(appointmentTimes.get(17), jeff);
+        Appointment w1c7a1 = new Appointment(appointmentTimes.get(18), martha);
+        Appointment w1c7a2 = new Appointment(appointmentTimes.get(19), martha);
+        Appointment w1c7a3 = new Appointment(appointmentTimes.get(20), martha);
+        Appointment w1c8a1 = new Appointment(appointmentTimes.get(21), jane);
+        Appointment w1c8a2 = new Appointment(appointmentTimes.get(22), jane);
+        Appointment w1c8a3 = new Appointment(appointmentTimes.get(23), jane);
+        Appointment w1c9a1 = new Appointment(appointmentTimes.get(24), addi);
+        Appointment w1c9a2 = new Appointment(appointmentTimes.get(25), addi);
+        Appointment w1c9a3 = new Appointment(appointmentTimes.get(26), addi);
+
+        Appointment[] w1app = {w1c1a1, w1c1a2, w1c1a3, w1c2a1, w1c2a2, w1c2a3, w1c3a1, w1c3a2, w1c3a3, w1c4a1, w1c4a2, w1c4a3, w1c5a1, w1c5a2, w1c5a3,
+                w1c6a1, w1c6a2, w1c6a3, w1c7a1, w1c7a2, w1c7a3, w1c8a1, w1c8a2, w1c8a3, w1c9a1, w1c9a2, w1c9a3};
+        appointmentsManager.addAppointments(w1app);
+
+        // week 2
+        Appointment w2c1a1 = new Appointment(appointmentTimes.get(27), terry);
+        Appointment w2c1a2 = new Appointment(appointmentTimes.get(28), terry);
+        Appointment w2c1a3 = new Appointment(appointmentTimes.get(29), terry);
+        Appointment w2c2a1 = new Appointment(appointmentTimes.get(30), maria);
+        Appointment w2c2a2 = new Appointment(appointmentTimes.get(31), maria);
+        Appointment w2c2a3 = new Appointment(appointmentTimes.get(32), maria);
+        Appointment w2c3a1 = new Appointment(appointmentTimes.get(33), nina);
+        Appointment w2c3a2 = new Appointment(appointmentTimes.get(34), nina);
+        Appointment w2c3a3 = new Appointment(appointmentTimes.get(35), nina);
+        Appointment w2c4a1 = new Appointment(appointmentTimes.get(36), hassan);
+        Appointment w2c4a2 = new Appointment(appointmentTimes.get(37), hassan);
+        Appointment w2c4a3 = new Appointment(appointmentTimes.get(38), hassan);
+        Appointment w2c5a1 = new Appointment(appointmentTimes.get(39), demi);
+        Appointment w2c5a2 = new Appointment(appointmentTimes.get(40), demi);
+        Appointment w2c5a3 = new Appointment(appointmentTimes.get(41), demi);
+        Appointment w2c6a1 = new Appointment(appointmentTimes.get(42), jeff);
+        Appointment w2c6a2 = new Appointment(appointmentTimes.get(43), jeff);
+        Appointment w2c6a3 = new Appointment(appointmentTimes.get(44), jeff);
+        Appointment w2c7a1 = new Appointment(appointmentTimes.get(45), martha);
+        Appointment w2c7a2 = new Appointment(appointmentTimes.get(46), martha);
+        Appointment w2c7a3 = new Appointment(appointmentTimes.get(47), martha);
+        Appointment w2c8a1 = new Appointment(appointmentTimes.get(48), jane);
+        Appointment w2c8a2 = new Appointment(appointmentTimes.get(49), jane);
+        Appointment w2c8a3 = new Appointment(appointmentTimes.get(50), jane);
+        Appointment w2c9a1 = new Appointment(appointmentTimes.get(51), addi);
+        Appointment w2c9a2 = new Appointment(appointmentTimes.get(52), addi);
+        Appointment w2c9a3 = new Appointment(appointmentTimes.get(53), addi);
+
+        Appointment[] w2app = {w2c1a1, w2c1a2, w2c1a3, w2c2a1, w2c2a2, w2c2a3, w2c3a1, w2c3a2, w2c3a3, w2c4a1, w2c4a2, w2c4a3, w2c5a1, w2c5a2, w2c5a3,
+                w2c6a1, w2c6a2, w2c6a3, w2c7a1, w2c7a2, w2c7a3, w2c8a1, w2c8a2, w2c8a3, w2c9a1, w2c9a2, w2c9a3};
+        appointmentsManager.addAppointments(w2app);
+
+        Appointment w3c1a1 = new Appointment(appointmentTimes.get(54), terry);
+        Appointment w3c1a2 = new Appointment(appointmentTimes.get(55), terry);
+        Appointment w3c1a3 = new Appointment(appointmentTimes.get(56), terry);
+        Appointment w3c2a1 = new Appointment(appointmentTimes.get(57), maria);
+        Appointment w3c2a2 = new Appointment(appointmentTimes.get(58), maria);
+        Appointment w3c2a3 = new Appointment(appointmentTimes.get(59), maria);
+        Appointment w3c3a1 = new Appointment(appointmentTimes.get(60), nina);
+        Appointment w3c3a2 = new Appointment(appointmentTimes.get(61), nina);
+        Appointment w3c3a3 = new Appointment(appointmentTimes.get(62), nina);
+        Appointment w3c4a1 = new Appointment(appointmentTimes.get(63), hassan);
+        Appointment w3c4a2 = new Appointment(appointmentTimes.get(64), hassan);
+        Appointment w3c4a3 = new Appointment(appointmentTimes.get(65), hassan);
+        Appointment w3c5a1 = new Appointment(appointmentTimes.get(66), demi);
+        Appointment w3c5a2 = new Appointment(appointmentTimes.get(67), demi);
+        Appointment w3c5a3 = new Appointment(appointmentTimes.get(68), demi);
+        Appointment w3c6a1 = new Appointment(appointmentTimes.get(69), jeff);
+        Appointment w3c6a2 = new Appointment(appointmentTimes.get(70), jeff);
+        Appointment w3c6a3 = new Appointment(appointmentTimes.get(71), jeff);
+        Appointment w3c7a1 = new Appointment(appointmentTimes.get(72), martha);
+        Appointment w3c7a2 = new Appointment(appointmentTimes.get(73), martha);
+        Appointment w3c7a3 = new Appointment(appointmentTimes.get(74), martha);
+        Appointment w3c8a1 = new Appointment(appointmentTimes.get(75), jane);
+        Appointment w3c8a2 = new Appointment(appointmentTimes.get(76), jane);
+        Appointment w3c8a3 = new Appointment(appointmentTimes.get(77), jane);
+        Appointment w3c9a1 = new Appointment(appointmentTimes.get(78), addi);
+        Appointment w3c9a2 = new Appointment(appointmentTimes.get(79), addi);
+        Appointment w3c9a3 = new Appointment(appointmentTimes.get(80), addi);
+
+        Appointment[] w3app = {w3c1a1, w3c1a2, w3c1a3, w3c2a1, w3c2a2, w3c2a3, w3c3a1, w3c3a2, w3c3a3, w3c4a1, w3c4a2, w3c4a3, w3c5a1, w3c5a2, w3c5a3,
+                w3c6a1, w3c6a2, w3c6a3, w3c7a1, w3c7a2, w3c7a3, w3c8a1, w3c8a2, w3c8a3, w3c9a1, w3c9a2, w3c9a3};
+        appointmentsManager.addAppointments(w3app);
+
+        Appointment w4c1a1 = new Appointment(appointmentTimes.get(81), terry);
+        Appointment w4c1a2 = new Appointment(appointmentTimes.get(82), terry);
+        Appointment w4c1a3 = new Appointment(appointmentTimes.get(83), terry);
+        Appointment w4c2a1 = new Appointment(appointmentTimes.get(84), maria);
+        Appointment w4c2a2 = new Appointment(appointmentTimes.get(86), maria);
+        Appointment w4c2a3 = new Appointment(appointmentTimes.get(86), maria);
+        Appointment w4c3a1 = new Appointment(appointmentTimes.get(87), nina);
+        Appointment w4c3a2 = new Appointment(appointmentTimes.get(88), nina);
+        Appointment w4c3a3 = new Appointment(appointmentTimes.get(89), nina);
+        Appointment w4c4a1 = new Appointment(appointmentTimes.get(90), hassan);
+        Appointment w4c4a2 = new Appointment(appointmentTimes.get(91), hassan);
+        Appointment w4c4a3 = new Appointment(appointmentTimes.get(92), hassan);
+        Appointment w4c5a1 = new Appointment(appointmentTimes.get(93), demi);
+        Appointment w4c5a2 = new Appointment(appointmentTimes.get(94), demi);
+        Appointment w4c5a3 = new Appointment(appointmentTimes.get(95), demi);
+        Appointment w4c6a1 = new Appointment(appointmentTimes.get(96), jeff);
+        Appointment w4c6a2 = new Appointment(appointmentTimes.get(97), jeff);
+        Appointment w4c6a3 = new Appointment(appointmentTimes.get(98), jeff);
+        Appointment w4c7a1 = new Appointment(appointmentTimes.get(99), martha);
+        Appointment w4c7a2 = new Appointment(appointmentTimes.get(100), martha);
+        Appointment w4c7a3 = new Appointment(appointmentTimes.get(101), martha);
+        Appointment w4c8a1 = new Appointment(appointmentTimes.get(102), jane);
+        Appointment w4c8a2 = new Appointment(appointmentTimes.get(103), jane);
+        Appointment w4c8a3 = new Appointment(appointmentTimes.get(104), jane);
+        Appointment w4c9a1 = new Appointment(appointmentTimes.get(105), addi);
+        Appointment w4c9a2 = new Appointment(appointmentTimes.get(106), addi);
+        Appointment w4c9a3 = new Appointment(appointmentTimes.get(107), addi);
+
+        Appointment[] w4app = {w4c1a1, w4c1a2, w4c1a3, w4c2a1, w4c2a2, w4c2a3, w4c3a1, w4c3a2, w4c3a3, w4c4a1, w4c4a2, w4c4a3, w4c5a1, w4c5a2, w4c5a3,
+                w4c6a1, w4c6a2, w4c6a3, w4c7a1, w4c7a2, w4c7a3, w4c8a1, w4c8a2, w4c8a3, w4c9a1, w4c9a2, w4c9a3};
+        appointmentsManager.addAppointments(w4app);
 
     }
 

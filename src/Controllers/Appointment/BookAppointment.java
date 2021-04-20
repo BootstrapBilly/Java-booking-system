@@ -9,16 +9,14 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CancelBookAppointment extends EventHandler implements ActionListener {
+public class BookAppointment extends EventHandler implements ActionListener {
 
     private AppointmentsManager appointments = Appointments.getInstance();
     private Router router = Router.getInstance();
 
     private String appointmentId;
 
-    public CancelBookAppointment() {
-        super();
-    }
+    public BookAppointment() {super();}
 
     public void actionPerformed(ActionEvent e) {
         appointmentId = ((JButton) e.getSource()).getName();
@@ -28,9 +26,8 @@ public class CancelBookAppointment extends EventHandler implements ActionListene
 
     }
 
-
     @Override
     public void updateDataStore() {
-            appointments.cancelSelection(appointmentId);
+        appointments.confirmBooking(appointmentId);
     }
 }

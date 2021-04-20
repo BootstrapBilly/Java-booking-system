@@ -2,26 +2,30 @@ package Views.SharedComponents;
 
 
 import Constants.AppointmentStatus;
+import Controllers.Appointment.BookAppointment;
 import Controllers.Appointment.CancelBookAppointment;
-import Data.Managers.Session.Session;
+import Data.Managers.Appointments.Appointments;
+import Data.Managers.Appointments.AppointmentsManager;
 import Models.Event.Appointment;
-import Models.Lesson.Lesson;
-import Models.User.Student;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import static Views.Util.Methods.setFontSize;
 
 public class AppointmentCard {
+    private AppointmentsManager appointmentManager = Appointments.getInstance();
 
     private JButton container;
     private JPanel footerContainer = new JPanel(new BorderLayout());
     private String ID;
     private ActionListener listener ;
     private Appointment appointment;
+    private String parentName;
 
     public AppointmentCard(String ID, ActionListener listener, Appointment appointment) {
         this.ID = ID;
@@ -53,6 +57,16 @@ public class AppointmentCard {
             JTextField input = new JTextField();
             body.add(prompt);
             body.add(input);
+            input.addKeyListener(new KeyListener() {
+
+                public void keyTyped(KeyEvent e) {}
+                public void keyPressed(KeyEvent e) {}
+
+                @Override
+                public void keyReleased(KeyEvent e) {
+                    appointmentManager.setParentName(input.getText());
+                }
+            });
         } else {
             JLabel time = new JLabel("<html>" +
                     "Week: " + appointment.getTime().getWeek() + "<br/>" +
@@ -118,7 +132,7 @@ public class AppointmentCard {
             JButton bookButton = new JButton(isBeingBooked ? "Confirm" : "Book now");
             bookButton.setBackground(new Color(194, 226, 195));
             bookButton.setFont(bookButton.getFont().deriveFont(16));
-            bookButton.addActionListener(listener);
+            bookButton.addActionListener(new BookAppointment());
             bookButton.setName(ID);
             bookButton.setBorder(new EmptyBorder(0,0,0,5));
             footerContainer.add(bookButton, BorderLayout.EAST);
