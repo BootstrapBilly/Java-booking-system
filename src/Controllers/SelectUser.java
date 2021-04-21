@@ -48,7 +48,7 @@ public class SelectUser extends EventHandler implements ActionListener {
 
     @Override
     public String handleNextRoute(){
-        return Routes.FIND_LESSON_BY_SELECT;
+        return Routes.FIND_EVENT_BY_SELECT;
     }
 
 }

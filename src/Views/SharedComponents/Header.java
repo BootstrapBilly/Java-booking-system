@@ -1,6 +1,9 @@
 package Views.SharedComponents;
+import Controllers.Home;
+import Controllers.Logout;
 import Views.Util.Methods;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class Header {
@@ -50,9 +53,19 @@ public class Header {
 
     public void addRightCol(){
         JPanel rightCol = new JPanel(new GridBagLayout());
-        JLabel c = new JLabel("Logo");
 
-        rightCol.add(c);
+        JButton home = new JButton("Home");
+        home.addActionListener(new Home());
+
+        JLabel gap = new JLabel("");
+        gap.setBorder(new EmptyBorder(0,0,0,15));
+
+        JButton logout = new JButton("Log out");
+        logout.addActionListener(new Logout());
+
+        rightCol.add(home);
+        rightCol.add(gap);
+        rightCol.add(logout);
 
         gbc.weightx = 0.1;
         container.add(rightCol, gbc);

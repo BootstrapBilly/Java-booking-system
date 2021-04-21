@@ -48,9 +48,9 @@ public class Router {
                 UserSelect userSelect = new UserSelect();
                 content = userSelect.component();
                 break;
-            case Routes.FIND_LESSON_BY_SELECT:
-                FindLessonBy findLessonBy = new FindLessonBy();
-                content = findLessonBy.component();
+            case Routes.FIND_EVENT_BY_SELECT:
+                FIndEventBy FIndEventBy = new FIndEventBy();
+                content = FIndEventBy.component();
                 break;
             case Routes.DISPLAY_COACHES:
                 DisplayCoaches displayCoaches = new DisplayCoaches();

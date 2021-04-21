@@ -12,14 +12,14 @@ import Views.SharedComponents.Header;
 import javax.swing.*;
 import java.awt.*;
 
-public class FindLessonBy {
+public class FIndEventBy {
 
     private JPanel container;
     private JPanel optionDisplayContainer = new JPanel(new GridBagLayout());
 
     static GridBagConstraints gbc = new GridBagConstraints();
 
-    public FindLessonBy() {
+    public FIndEventBy() {
         container = new JPanel();
         container.setLayout(new GridBagLayout());
 
