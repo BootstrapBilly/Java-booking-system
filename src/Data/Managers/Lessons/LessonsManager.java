@@ -8,12 +8,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
-public class LessonManager {
+public class LessonsManager {
 
     private ArrayList<Lesson> lessons;
     private ArrayList<Lesson> lessonsToDisplay;
 
-    public LessonManager() {
+    public LessonsManager() {
         lessons = new ArrayList<Lesson>();
         lessonsToDisplay = new ArrayList<Lesson>();
     }

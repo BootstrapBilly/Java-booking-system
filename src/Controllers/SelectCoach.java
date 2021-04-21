@@ -4,10 +4,9 @@ import Constants.Routes;
 import Constants.UserTypes;
 import Data.Managers.Appointments.Appointments;
 import Data.Managers.Appointments.AppointmentsManager;
-import Data.Managers.Lessons.LessonManager;
+import Data.Managers.Lessons.LessonsManager;
 import Data.Managers.Lessons.Lessons;
 import Data.Managers.Session.Session;
-import Models.Event.Appointment;
 import Models.Lesson.Lesson;
 import Data.Managers.Coaches.CoachesManager;
 import Data.Managers.Coaches.Coaches;
@@ -18,7 +17,7 @@ import java.awt.event.ActionListener;
 
 public class SelectCoach extends EventHandler implements ActionListener {
     private CoachesManager coaches = Coaches.getInstance();
-    private LessonManager lessons = Lessons.getInstance();
+    private LessonsManager lessons = Lessons.getInstance();
     private AppointmentsManager appointments = Appointments.getInstance();
 
     private String userType = Session.getInstance().getUserType();

@@ -6,20 +6,17 @@ import Data.Managers.ActivityType.ActivityType;
 import Data.Managers.ActivityType.ActivityTypeManager;
 import Data.Managers.Appointments.Appointments;
 import Data.Managers.Appointments.AppointmentsManager;
-import Data.Managers.Lessons.LessonManager;
+import Data.Managers.Lessons.LessonsManager;
 import Data.Managers.Lessons.Lessons;
 import Data.Managers.Session.Session;
 import Data.Managers.Session.SessionManager;
-import Models.Lesson.Lesson;
-import Data.Managers.Coaches.CoachesManager;
-import Data.Managers.Coaches.Coaches;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SelectActivityType extends EventHandler implements ActionListener {
-    private LessonManager lessons = Lessons.getInstance();
+    private LessonsManager lessons = Lessons.getInstance();
     private AppointmentsManager appointments = Appointments.getInstance();
     private ActivityTypeManager activityTypes = ActivityType.getInstance();
     private SessionManager session = Session.getInstance();

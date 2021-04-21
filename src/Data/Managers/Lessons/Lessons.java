@@ -2,14 +2,14 @@
 package Data.Managers.Lessons;
 
 public class Lessons {
-    private static LessonManager uniqueInstance;
+    private static LessonsManager uniqueInstance;
 
     private Lessons(){};
 
-    public static LessonManager getInstance(){
+    public static LessonsManager getInstance(){
         if(uniqueInstance == null){
-            LessonManager lessonManager = new LessonManager();
-            uniqueInstance = lessonManager;
+            LessonsManager lessonsManager = new LessonsManager();
+            uniqueInstance = lessonsManager;
         }
         return uniqueInstance;
     }

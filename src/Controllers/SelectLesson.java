@@ -1,6 +1,6 @@
 package Controllers;
 
-import Data.Managers.Lessons.LessonManager;
+import Data.Managers.Lessons.LessonsManager;
 import Data.Managers.Session.SessionManager;
 import Data.Managers.Lessons.Lessons;
 import Data.Managers.Session.Session;
@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 public class SelectLesson extends EventHandler implements ActionListener {
 
     private SessionManager session = Session.getInstance();
-    private LessonManager lessons = Lessons.getInstance();
+    private LessonsManager lessons = Lessons.getInstance();
     private Router router = Router.getInstance();
 
     private String lessonId;

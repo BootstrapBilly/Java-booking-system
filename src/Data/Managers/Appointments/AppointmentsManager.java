@@ -6,7 +6,6 @@ import Data.Managers.ActivityType.ActivityTypeManager;
 import Data.Managers.Coaches.Coaches;
 import Data.Managers.Coaches.CoachesManager;
 import Models.Event.Appointment;
-import Models.Lesson.Lesson;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -94,5 +93,9 @@ public class AppointmentsManager {
 
     public ArrayList<Appointment> getAppointments() {
         return appointments;
+    }
+
+    public String getParentName() {
+        return parentName;
     }
 }

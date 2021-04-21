@@ -84,7 +84,6 @@ public class Router {
 
         appContainer.setContentPane(content);
         appContainer.revalidate();
-
     }
 
     public void setRoute(String route){

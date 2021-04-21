@@ -16,7 +16,6 @@ public class CoachesManager {
 
     public void addCoach(Coach coach){
         this.coaches.add(coach);
-
     }
 
     public ArrayList<Coach> getCoaches(){

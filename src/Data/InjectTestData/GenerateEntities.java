@@ -12,7 +12,7 @@ import Models.User.User;
 import Models.Util.Classes.Entity;
 import Models.Util.Classes.TimePeriod;
 import Data.Managers.Coaches.CoachesManager;
-import Data.Managers.Lessons.LessonManager;
+import Data.Managers.Lessons.LessonsManager;
 import Data.Managers.Users.UsersManager;
 import Data.Managers.Coaches.Coaches;
 import Data.Managers.Lessons.Lessons;
@@ -30,7 +30,7 @@ public class GenerateEntities {
         UsersManager usersManager = Users.getInstance();
         StudentsManager studentsManager = Students.getInstance();
         CoachesManager coachesManager = Coaches.getInstance();
-        LessonManager lessonManager = Lessons.getInstance();
+        LessonsManager lessonsManager = Lessons.getInstance();
         AppointmentsManager appointmentsManager = Appointments.getInstance();
 
         // times
@@ -91,7 +91,7 @@ public class GenerateEntities {
         Lesson g14 = new Lesson(ActivityTypes.GYMNASTICS, new Entity("Gymnasium"), lessonTimes.get(19), LessonCapacity.GYMNASTICS);
 
         Lesson[] week1 = {f11, f12, f13, b11, b12, b13, s11, s12, s13, c11, c12, c13, bm11, bm12, bm13, bm14, g11, g12, g13, g14};
-        lessonManager.addLessons(week1);
+        lessonsManager.addLessons(week1);
 
         // week 2
         Lesson f21 = new Lesson(ActivityTypes.FOOTBALL, new Entity("Football pitch"), lessonTimes.get(20), LessonCapacity.FOOTBALL);
@@ -116,7 +116,7 @@ public class GenerateEntities {
         Lesson g24 = new Lesson(ActivityTypes.GYMNASTICS, new Entity("Gymnasium"), lessonTimes.get(39), LessonCapacity.GYMNASTICS);
 
         Lesson[] week2 = {f21, f22, f23, b21, b22, b23, s21, s22, s23, c21, c22, c23, bm21, bm22, bm23, bm24, g21, g22, g23, g24};
-        lessonManager.addLessons(week2);
+        lessonsManager.addLessons(week2);
 
         // week 3
         Lesson f31 = new Lesson(ActivityTypes.FOOTBALL, new Entity("Football pitch"), lessonTimes.get(40), LessonCapacity.FOOTBALL);
@@ -141,7 +141,7 @@ public class GenerateEntities {
         Lesson g34 = new Lesson(ActivityTypes.GYMNASTICS, new Entity("Gymnasium"), lessonTimes.get(59), LessonCapacity.GYMNASTICS);
 
         Lesson[] week3 = {f31, f32, f33, b31, b32, b33, s31, s32, s33, c31, c32, c33, bm31, bm32, bm33, bm34, g31, g32, g33, g34};
-        lessonManager.addLessons(week3);
+        lessonsManager.addLessons(week3);
 
         // week 4
         Lesson f41 = new Lesson(ActivityTypes.FOOTBALL, new Entity("Football pitch"), lessonTimes.get(60), LessonCapacity.FOOTBALL);
@@ -166,7 +166,7 @@ public class GenerateEntities {
         Lesson g44 = new Lesson(ActivityTypes.GYMNASTICS, new Entity("Gymnasium"), lessonTimes.get(79), LessonCapacity.GYMNASTICS);
 
         Lesson[] week4 = {f41, f42, f43, b41, b42, b43, s41, s42, s43, c41, c42, c43, bm41, bm42, bm43, bm44, g41, g42, g43, g44};
-        lessonManager.addLessons(week4);
+        lessonsManager.addLessons(week4);
 
         // coaches
         Coach terry = new Coach("Terry", "1 lane road", "07123456789",

@@ -3,7 +3,7 @@ package Views.Screens.DisplayReport;
 import Constants.ReportTypes;
 import Data.Managers.Appointments.Appointments;
 import Data.Managers.Appointments.AppointmentsManager;
-import Data.Managers.Lessons.LessonManager;
+import Data.Managers.Lessons.LessonsManager;
 import Data.Managers.Lessons.Lessons;
 import Data.Managers.ReportType.ReportType;
 import Data.Managers.ReportType.ReportTypeManager;
@@ -84,7 +84,7 @@ public class DisplayReport {
     }
 
     public void addLessonsAndAppointments(){
-        LessonManager lessons = Lessons.getInstance();
+        LessonsManager lessons = Lessons.getInstance();
         AppointmentsManager appointments = Appointments.getInstance();
 
         ArrayList ls = new ArrayList();

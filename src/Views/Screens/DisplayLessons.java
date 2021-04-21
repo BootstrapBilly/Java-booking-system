@@ -2,7 +2,7 @@ package Views.Screens;
 
 import Constants.CardTypes;
 import Controllers.SelectLesson;
-import Data.Managers.Lessons.LessonManager;
+import Data.Managers.Lessons.LessonsManager;
 import Data.Managers.Lessons.Lessons;
 import Views.Screens.Layouts.MainLayout;
 import Views.SharedComponents.Header;
@@ -14,7 +14,7 @@ public class DisplayLessons {
     private MainLayout container;
 
     public DisplayLessons(){
-        LessonManager lessons = Lessons.getInstance();
+        LessonsManager lessons = Lessons.getInstance();
 
         this.container = new MainLayout(
                 3,
