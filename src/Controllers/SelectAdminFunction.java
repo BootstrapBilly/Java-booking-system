@@ -23,7 +23,7 @@ public class SelectAdminFunction extends EventHandler implements ActionListener 
     public String handleNextRoute(){
         if(choice == AdminFunctions.ADD_NEW_STUDENT){
             System.out.println("handle this later");
-            return Routes.DISPLAY_COACHES;
+            return Routes.REGISTER_STUDENT;
         }
         else return Routes.REPORT_TYPE_SELECT;
     }

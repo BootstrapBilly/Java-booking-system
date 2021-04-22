@@ -8,6 +8,9 @@ import java.util.Iterator;
 public class StudentsManager {
 
     private ArrayList<Student> students;
+    private String newStudentName;
+    private String newStudentAddress;
+    private String newStudentPhone;
 
     public StudentsManager() {
         students = new ArrayList<Student>();
@@ -33,4 +36,27 @@ public class StudentsManager {
         return null;
     }
 
+    public String getNewStudentName() {
+        return newStudentName;
+    }
+
+    public void setNewStudentName(String newStudentName) {
+        this.newStudentName = newStudentName;
+    }
+
+    public String getNewStudentAddress() {
+        return newStudentAddress;
+    }
+
+    public void setNewStudentAddress(String newStudentAddress) {
+        this.newStudentAddress = newStudentAddress;
+    }
+
+    public String getNewStudentPhone() {
+        return newStudentPhone;
+    }
+
+    public void setNewStudentPhone(String newStudentPhone) {
+        this.newStudentPhone = newStudentPhone;
+    }
 }

@@ -14,4 +14,5 @@ public final class Routes {
     public static final String ADMIN_FUNCTION_SELECT = "ADMIN_FUNCTION_SELECT";
     public static final String REPORT_TYPE_SELECT = "REPORT_TYPE_SELECT";
     public static final String DISPLAY_REPORT = "DISPLAY_REPORT";
+    public static final String REGISTER_STUDENT = "REGISTER_STUDENT";
 }

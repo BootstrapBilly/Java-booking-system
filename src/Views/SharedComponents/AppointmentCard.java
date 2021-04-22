@@ -25,7 +25,6 @@ public class AppointmentCard {
     private String ID;
     private ActionListener listener ;
     private Appointment appointment;
-    private String parentName;
 
     public AppointmentCard(String ID, ActionListener listener, Appointment appointment) {
         this.ID = ID;

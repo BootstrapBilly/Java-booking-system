@@ -80,6 +80,10 @@ public class Router {
                 DisplayReport displayReport = new DisplayReport();
                 content = displayReport.component();
                 break;
+            case Routes.REGISTER_STUDENT:
+                RegisterStudent registerStudent = new RegisterStudent();
+                content = registerStudent.component();
+                break;
         }
 
         appContainer.setContentPane(content);
