@@ -1,7 +1,6 @@
 package Data.Managers.Coaches;
 
 import Data.InjectTestData.GenerateEntities;
-import Models.Event.Appointment;
 import Models.User.Coach;
 import org.junit.jupiter.api.Test;
 

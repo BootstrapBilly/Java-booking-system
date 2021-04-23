@@ -23,10 +23,14 @@ import Constants.LessonCapacity;
 import java.util.ArrayList;
 
 public class GenerateEntities {
+
+    // entity containers
     private static ArrayList <TimePeriod> lessonTimes = new ArrayList<>();
     private static ArrayList <TimePeriod> appointmentTimes = new ArrayList<>();
 
     public static void all(){
+
+        // state managers
         UsersManager usersManager = Users.getInstance();
         StudentsManager studentsManager = Students.getInstance();
         CoachesManager coachesManager = Coaches.getInstance();

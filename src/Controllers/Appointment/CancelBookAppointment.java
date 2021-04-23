@@ -11,9 +11,11 @@ import java.awt.event.ActionListener;
 
 public class CancelBookAppointment extends EventHandler implements ActionListener {
 
+    // state managers
     private AppointmentsManager appointments = Appointments.getInstance();
     private Router router = Router.getInstance();
 
+    // instance variables
     private String appointmentId;
 
     public CancelBookAppointment() {
@@ -24,7 +26,7 @@ public class CancelBookAppointment extends EventHandler implements ActionListene
         appointmentId = ((JButton) e.getSource()).getName();
 
         handleEvent();
-        router.paintScreen();
+        router.paintScreen(); // re-render the page with the updated state
 
     }
 

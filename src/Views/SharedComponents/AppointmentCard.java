@@ -57,7 +57,7 @@ public class AppointmentCard {
         coachContainer.add(coach);
         body.add(coachContainer, BorderLayout.NORTH);
 
-        if(appointment.getStatus() == AppointmentStatus.ADDNAME) {
+        if(appointment.getStatus() == AppointmentStatus.ADD_NAME) {
             JLabel prompt = new JLabel("What is your name ?");
             JTextField input = new JTextField();
             body.add(prompt);
@@ -90,7 +90,7 @@ public class AppointmentCard {
     private void addFooter(){
         footerContainer.setBorder(new EmptyBorder(10,10,10,10));
 
-        if(appointment.getStatus() == AppointmentStatus.ADDNAME) {
+        if(appointment.getStatus() == AppointmentStatus.ADD_NAME) {
             addFooterWest();
         }
 
@@ -130,7 +130,7 @@ public class AppointmentCard {
 
         Boolean isBeingBooked = false;
 
-        if(appointment.getStatus() == AppointmentStatus.ADDNAME) {
+        if(appointment.getStatus() == AppointmentStatus.ADD_NAME) {
             isBeingBooked = true;
         }
 

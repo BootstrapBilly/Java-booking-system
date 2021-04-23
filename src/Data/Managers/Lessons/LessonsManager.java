@@ -10,6 +10,10 @@ import java.util.Iterator;
 
 public class LessonsManager {
 
+    // state managers
+    private ActivityTypeManager activityTypes = ActivityType.getInstance();
+
+    // instance variables
     private ArrayList<Lesson> lessons;
     private ArrayList<Lesson> lessonsToDisplay;
 
@@ -19,17 +23,17 @@ public class LessonsManager {
     }
 
     public void bookLesson(String id){
-        for(Lesson l : lessons){
-            if(l.getID() == id){
-                l.incrementCapacity();
+        for(Lesson l : lessons){ // iterate through all lessons
+            if(l.getID() == id){ // if the given lesson id matches
+                l.incrementCapacity(); // increment the current capacity of it
             }
         }
     }
 
     public void cancelLesson(String id) {
-        for(Lesson l : lessons){
-            if(l.getID() == id){
-                l.decrementCapacity();
+        for(Lesson l : lessons){ // iterate through all lessons
+            if(l.getID() == id){ // if the given lesson id matches
+                l.decrementCapacity(); // decrement the current capacity of it
             }
         }
     }
@@ -43,29 +47,35 @@ public class LessonsManager {
     }
 
     public void setLessonsToDisplayByType(){
-        ActivityTypeManager activityTypes = ActivityType.getInstance();
-        ArrayList lessonsToDisplay = new ArrayList();
+        ArrayList lessonsToDisplay = new ArrayList(); // container to store lessons to be displayed
+
         Iterator<Lesson> lessonsIterator = this.lessons.iterator();
-        while(lessonsIterator.hasNext()){
+
+        while(lessonsIterator.hasNext()){ // iterate through all lessons
             Lesson next = lessonsIterator.next();
+
+            // if the lesson is of the type of activity which has been selected
             if(next.getName() == activityTypes.getCurrentActivityType()){
-                lessonsToDisplay.add(next);
+                lessonsToDisplay.add(next); // add it to the lessons to display
             }
         }
+        // overwrite the instance variable with the lessons to display
         this.lessonsToDisplay = lessonsToDisplay;
 
     }
 
     public Lesson getLessonById(String ID){
         Iterator<Lesson> lessonsIterator = this.lessons.iterator();
-        while(lessonsIterator.hasNext()){
+
+        while(lessonsIterator.hasNext()){ // iterate through all lessons
             Lesson next = lessonsIterator.next();
-            if(next.getID() == ID){
-                return next;
+
+            if(next.getID() == ID){ // if a match is found
+                return next; // return it
             }
         }
 
-        return null;
+        return null; // otherwise return null
     }
 
     public ArrayList<Lesson> getLessonsToDisplay() {

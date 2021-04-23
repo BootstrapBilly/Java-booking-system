@@ -1,6 +1,5 @@
 package Models.User;
 
-import Models.Event.Appointment;
 import Models.Lesson.Lesson;
 import Models.Util.Classes.Entity;
 import Models.Util.Classes.TimePeriod;

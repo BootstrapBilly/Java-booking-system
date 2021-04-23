@@ -1,4 +1,3 @@
-
 package Data.Managers.ActivityType;
 
 public class ActivityType {

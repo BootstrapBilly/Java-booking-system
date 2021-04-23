@@ -1,7 +1,4 @@
-
 package Data.Managers.ReportType;
-
-import Data.Managers.ActivityType.ActivityTypeManager;
 
 public class ReportType {
     private static ReportTypeManager uniqueInstance;

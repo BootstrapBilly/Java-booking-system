@@ -11,7 +11,7 @@ public class BackwardsNavigation implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         Router appRouter = Router.getInstance();
-        appRouter.goBack();
+        appRouter.goBack(); // return to the previous page in the history stack
     }
 
 }

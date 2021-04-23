@@ -14,10 +14,12 @@ import java.awt.event.ActionListener;
 
 public class SelectLesson extends EventHandler implements ActionListener {
 
+    // state managers
     private SessionManager session = Session.getInstance();
     private LessonsManager lessons = Lessons.getInstance();
     private Router router = Router.getInstance();
 
+    // instance variables
     private String lessonId;
     private Student student;
     private Lesson selectedLesson;
@@ -31,27 +33,34 @@ public class SelectLesson extends EventHandler implements ActionListener {
         lessonId = ((JButton) e.getSource()).getName();
 
         handleEvent();
-        router.paintScreen();
+        router.paintScreen(); // re-render ui with the new state
 
     }
 
     @Override
     public void setupRequiredData() {
-        student = (Student) session.getSession();
-        selectedLesson = lessons.getLessonById(lessonId);
-        studentBookedAlready = student.isAttendingLesson(lessonId);
+        selectedLesson = lessons.getLessonById(lessonId); // get the full lesson object which they clicked
+
+        student = (Student) session.getSession(); // get the full student object from the session
+        studentBookedAlready = student.isAttendingLesson(lessonId); // check if they are booked into the lesson which they clicked
     }
 
     @Override
     public void updateDataStore() {
-        if (!selectedLesson.hasSpace()) {
-            return;
+        // if the lesson doesn't have space and the student is not already booked in
+        if (!selectedLesson.hasSpace() && !studentBookedAlready) {
+            return; // do not book them in
         }
+        // otherwise if they are booked in
         if (studentBookedAlready) {
+            // cancel the booking
             lessons.cancelLesson(lessonId);
             student.cancelLesson(selectedLesson);
             
-        } else {
+        }
+        // otherwise if they are not booked in and the lesson has space
+        else {
+            // book them in
             lessons.bookLesson(lessonId);
             student.bookLesson(selectedLesson);
         }

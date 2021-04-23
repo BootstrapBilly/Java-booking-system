@@ -15,7 +15,7 @@ public class Logout extends EventHandler implements ActionListener {
         handleEvent();
     }
 
-
+    // this event handler takes the user back to the login page where they can select parent, student or admin
     @Override
     public String handleNextRoute() {
         return Routes.LOGIN;

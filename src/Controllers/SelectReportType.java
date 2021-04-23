@@ -1,7 +1,5 @@
 package Controllers;
 
-import Constants.AdminFunctions;
-import Constants.ReportTypes;
 import Constants.Routes;
 import Data.Managers.ReportType.ReportType;
 import Data.Managers.ReportType.ReportTypeManager;
@@ -12,8 +10,13 @@ import java.awt.event.ActionListener;
 
 
 public class SelectReportType extends EventHandler implements ActionListener {
-    private String choice;
+
+    // state managers
     private ReportTypeManager reportType = ReportType.getInstance();
+
+    // instance variables
+    private String choice;
+
     public SelectReportType() {
         super ();
     }

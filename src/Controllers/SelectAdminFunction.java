@@ -9,7 +9,10 @@ import java.awt.event.ActionListener;
 
 
 public class SelectAdminFunction extends EventHandler implements ActionListener {
+
+    // instance variables
     private String choice;
+
     public SelectAdminFunction() {
         super ();
     }
@@ -22,9 +25,9 @@ public class SelectAdminFunction extends EventHandler implements ActionListener 
     @Override
     public String handleNextRoute(){
         if(choice == AdminFunctions.ADD_NEW_STUDENT){
-            System.out.println("handle this later");
             return Routes.REGISTER_STUDENT;
         }
+        // otherwise they must have selected generate report
         else return Routes.REPORT_TYPE_SELECT;
     }
 

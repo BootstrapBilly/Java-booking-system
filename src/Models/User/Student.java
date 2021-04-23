@@ -20,12 +20,12 @@ public class Student extends Person {
     }
 
     public Boolean isAttendingLesson(String lessonId){
-        for(Lesson l : lessons){
-            if(l.getID() == lessonId){
-                return true;
+        for(Lesson l : lessons){ // loop through all lessons which they are attending
+            if(l.getID() == lessonId){ // if the given id matches, they are attending that lesson
+                return true; // if they are attending, return true
             }
         }
-        return false;
+        return false; // otherwise return false
     }
 
     public ArrayList<Lesson> getLessons() {

@@ -1,4 +1,3 @@
-
 package Data.Managers.Lessons;
 
 public class Lessons {

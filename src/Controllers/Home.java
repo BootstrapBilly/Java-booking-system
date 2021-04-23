@@ -10,8 +10,11 @@ import java.awt.event.ActionListener;
 
 public class Home extends EventHandler implements ActionListener {
 
+    // state managers
     private SessionManager session = Session.getInstance();
-    private String userType;
+
+    // instance variables
+    private String userType; // admin, parent or student
 
     public Home() {
         super ();
@@ -28,6 +31,9 @@ public class Home extends EventHandler implements ActionListener {
 
     @Override
     public String handleNextRoute() {
+
+        /* this event handler is attached to the home button which
+         returns the user to the root page, which is different for admins */
 
         String route = "";
 

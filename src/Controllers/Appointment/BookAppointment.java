@@ -11,18 +11,20 @@ import java.awt.event.ActionListener;
 
 public class BookAppointment extends EventHandler implements ActionListener {
 
+    // state managers
     private AppointmentsManager appointments = Appointments.getInstance();
     private Router router = Router.getInstance();
 
+    // instance variables
     private String appointmentId;
 
     public BookAppointment() {super();}
 
     public void actionPerformed(ActionEvent e) {
-        appointmentId = ((JButton) e.getSource()).getName();
+        appointmentId = ((JButton) e.getSource()).getName(); // extract id of appointment
 
-        handleEvent();
-        router.paintScreen();
+        handleEvent(); // run the event handler
+        router.paintScreen(); // re-render the page with the latest data
 
     }
 

@@ -19,12 +19,4 @@ public class Person extends Entity {
     public String getName(){
         return super.getName();
     }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
 }

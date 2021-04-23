@@ -4,6 +4,8 @@ import Models.Util.Classes.Entity;
 import Models.Util.Classes.TimePeriod;
 
 public class Lesson extends Entity {
+
+    // instance variables
     private Entity venue;
     private TimePeriod time;
     private int maxCapacity;
@@ -46,14 +48,5 @@ public class Lesson extends Entity {
             return false;
         }
         return true;
-    }
-
-    public void printDetails(){
-        System.out.println("ID: " + super.getID());
-        System.out.println("Name: " + super.getName());
-        System.out.println("Venue: " + venue.getName());
-        System.out.println("Time: "); this.time.printDetails();
-        System.out.println("Max Capacity: " + this.maxCapacity);
-        System.out.println("Current Capacity: " + this.currentCapacity);
     }
 }

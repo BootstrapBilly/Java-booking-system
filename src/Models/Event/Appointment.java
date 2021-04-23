@@ -8,6 +8,7 @@ import java.util.UUID;
 
 public class Appointment {
 
+    // instance variables
     private String ID;
     private String parentName = null;
     private TimePeriod time;
@@ -15,7 +16,7 @@ public class Appointment {
     private Coach coach;
 
     public Appointment(TimePeriod time, Coach coach) {
-        this.ID = UUID.randomUUID().toString();
+        this.ID = UUID.randomUUID().toString(); // generate a random id for the appointment
         this.time = time;
         this.coach = coach;
     }

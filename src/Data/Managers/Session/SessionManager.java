@@ -2,8 +2,9 @@ package Data.Managers.Session;
 
 public class SessionManager<A> {
 
+    // instance variables
     private String userType;
-    private A user;
+    private A user; // the user can be a student, or an entity, hence the usage of generics
 
     public SessionManager() {}
 

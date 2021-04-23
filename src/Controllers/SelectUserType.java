@@ -12,8 +12,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SelectUserType extends EventHandler implements ActionListener {
-    private String userType;
+
+    // state managers
     private SessionManager session = Session.getInstance();
+
+    // instance variables
+    private String userType;
+
 
     public SelectUserType() {
         super ();

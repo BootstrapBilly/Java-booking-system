@@ -1,14 +1,8 @@
 package Data.Managers.ReportType;
 
-import Constants.ActivityTypes;
-import Models.Util.Classes.Entity;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-
 public class ReportTypeManager {
 
+    // instance variables
     private String currentReportType = "";
 
     public ReportTypeManager() {}

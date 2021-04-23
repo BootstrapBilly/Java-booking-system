@@ -7,6 +7,7 @@ import java.util.Iterator;
 
 public class CoachesManager {
 
+    // instance variables
     private ArrayList<Coach> coaches;
     private Coach selectedCoach;
 
@@ -24,14 +25,16 @@ public class CoachesManager {
 
     public Coach getCoachById(String ID){
         Iterator<Coach> coachIterator = this.coaches.iterator();
-        while(coachIterator.hasNext()){
+
+        while(coachIterator.hasNext()){ // iterate through all coaches
             Coach next = coachIterator.next();
-            if(next.getID() == ID){
-                return next;
+
+            if(next.getID() == ID){ // if the given id matches, the coach has been found
+                return next; // return it
             }
         }
 
-        return null;
+        return null; // otherwise it was not found, return null
     }
 
     public Coach getSelectedCoach() {

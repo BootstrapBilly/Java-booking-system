@@ -1,8 +1,7 @@
 package Data.Managers.JFrame;
 
-import Data.Managers.JFrame.JFrameManager;
-
 public class JFrame {
+    // this makes the JFrame container globally available, so the router and append the required screen to it on the fly
     private static JFrameManager uniqueInstance;
 
     private JFrame(){};

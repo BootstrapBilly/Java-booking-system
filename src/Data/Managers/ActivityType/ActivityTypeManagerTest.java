@@ -2,7 +2,6 @@ package Data.Managers.ActivityType;
 
 import Constants.ActivityTypes;
 import Models.Util.Classes.Entity;
-import Views.Router.Router;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

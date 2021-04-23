@@ -1,6 +1,5 @@
 package Models.User;
 
-import Models.Event.Appointment;
 import Models.Lesson.Lesson;
 
 import java.util.ArrayList;

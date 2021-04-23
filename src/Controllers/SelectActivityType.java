@@ -16,13 +16,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SelectActivityType extends EventHandler implements ActionListener {
+
+    // state managers
     private LessonsManager lessons = Lessons.getInstance();
     private AppointmentsManager appointments = Appointments.getInstance();
     private ActivityTypeManager activityTypes = ActivityType.getInstance();
     private SessionManager session = Session.getInstance();
 
+    // instance variables
     private Boolean isParent = false;
-
     private String typeId;
 
     public SelectActivityType() {
@@ -46,7 +48,7 @@ public class SelectActivityType extends EventHandler implements ActionListener {
     public void updateDataStore() {
         activityTypes.setCurrentActivityType(typeId);
         if(isParent){
-            appointments.setAppointmentsToDisplayByType();
+            appointments.setAppointmentsToDisplayByActivity();
         } else {
             lessons.setLessonsToDisplayByType();
         }

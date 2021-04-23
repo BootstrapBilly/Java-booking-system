@@ -2,6 +2,7 @@ package Models.Util.Classes;
 
 public class TimePeriod {
 
+    // instance variables
     private int week;
     private int day;
     private int startTimeHour;
@@ -16,12 +17,25 @@ public class TimePeriod {
         this.durationMins = durationMins;
     }
 
-    public int getWeek() {
-        return week;
+    public String getWeek() {
+        String weekString = "";
+
+        int[] four = {0,1,2,3};
+        int[] seven = {0,1,2,3,4,5,6,7};
+
+       for(int week : four){
+            for(int day : seven){
+                weekString = (this.day * this.week) + "/05" + "/2021";
+            }
+       }
+
+        return weekString;
+
     }
 
     public String getDay() {
         String dayString = "";
+
         switch (day){
             case 1:
                 dayString =  "Monday";
@@ -64,12 +78,4 @@ public class TimePeriod {
         return durationMins;
     }
 
-    public void printDetails(){
-        System.out.println(
-                "Week: " + week +
-                        " Day: " + day +
-                        " Time: " + startTimeHour + ":" + startTimeMinute +
-                        " Duration: " + durationMins + " mins"
-        );
-    }
 }
