@@ -92,8 +92,6 @@ public class MainLayout {
             container.add(cardDisplayContainer, BorderLayout.CENTER);
         }
 
-
-
     }
 
     public void setUpRows(){

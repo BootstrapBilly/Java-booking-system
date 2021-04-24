@@ -91,10 +91,10 @@ public class Router {
     }
 
     public void setRoute(String route){
-        currentRoute = route;
-        paintScreen();
+        currentRoute = route; // set the current route
+        paintScreen(); // call the paint screen method to attach it to the jframe
 
-        history.push(route);
+        history.push(route); // add the route to the history, so it can be navigated back to on backButton click
     }
 
     public void goBack() {

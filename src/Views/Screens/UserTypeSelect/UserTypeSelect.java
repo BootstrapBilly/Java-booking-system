@@ -23,7 +23,6 @@ public class UserTypeSelect {
         container.setLayout(new GridBagLayout());
 
         addColumns();
-        styleColumns();
     }
 
     public void addColumns(){
@@ -62,16 +61,11 @@ public class UserTypeSelect {
         rightCol.setLayout(new GridBagLayout());
 
         PortalButton admin = new PortalButton(ADMIN);
+
         rightCol.add(admin.component());
 
         gbc.gridx = 3;
         container.add(rightCol, gbc);
-    }
-
-    public void styleColumns(){
-        leftCol.setBackground(Color.cyan);
-        midCol.setBackground(Color.green);
-        rightCol.setBackground(Color.blue);
     }
 
     public JPanel component() {
