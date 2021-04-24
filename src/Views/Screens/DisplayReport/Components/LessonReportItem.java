@@ -1,6 +1,6 @@
 package Views.Screens.DisplayReport.Components;
 import Models.Lesson.Lesson;
-import Models.Util.Classes.TimePeriod;
+import Models.Util.TimePeriod;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -18,7 +18,7 @@ public class LessonReportItem {
         container = new JPanel();
         container.setLayout(new GridBagLayout());
 
-        container.setBackground(Color.gray);
+        container.setBackground(Color.pink);
         container.setBorder(new EmptyBorder(5,5,5,50));
         setupMainLayout();
     }

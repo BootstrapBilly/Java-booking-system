@@ -16,13 +16,15 @@ public class DisplayCoaches {
     public DisplayCoaches(){
         CoachesManager coaches = Coaches.getInstance();
 
+        String[] imageUrls = {"terry.jpg", "maria.jpg", "nina.jpg", "hassan.jpg", "demi.jpg", "jeff.jpg", "martha.jpg", "jane.jpg", "addi.jpg"};
+
         this.container = new MainLayout(
                 3,
                 coaches.getCoaches(),
                 CardTypes.NAVIGATION,
                 new Header(true, "Which coach are you looking for ?"),
                 new SelectCoach(),
-                20, 20, false);
+                20, 20, false, imageUrls);
     }
 
     public JComponent component() {

@@ -69,13 +69,13 @@ public class TwoPanelSelect {
                 c1Name,
                 c1Name,
                 clickhandler,
-                "lessonType.jpg");
+                c1Image);
 
         NavigationCard c2 = new NavigationCard(
                 c2Name,
                 c2Name,
                 clickhandler,
-                "lessonType.jpg");
+                c2Image);
 
         GridBagConstraints optionsGbc = new GridBagConstraints();
 

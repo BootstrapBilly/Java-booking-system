@@ -9,8 +9,8 @@ import Models.Lesson.Lesson;
 import Models.User.Coach;
 import Models.User.Student;
 import Models.User.User;
-import Models.Util.Classes.Entity;
-import Models.Util.Classes.TimePeriod;
+import Models.Util.Entity;
+import Models.Util.TimePeriod;
 import Data.Managers.Coaches.CoachesManager;
 import Data.Managers.Lessons.LessonsManager;
 import Data.Managers.Users.UsersManager;
@@ -175,47 +175,47 @@ public class GenerateEntities {
         // coaches
         Coach terry = new Coach("Terry", "1 lane road", "07123456789",
                 new String[] {ActivityTypes.FOOTBALL},
-                new Lesson[] {f11, f12, f21, f22, f31, f32, f41, f42});
+                new Lesson[] {f11, f12, f21, f22, f31, f32, f41, f42}, "terry.jpg");
         coachesManager.addCoach(terry);
 
         Coach maria = new Coach("Maria", "2 road avenue", "07987654321",
                 new String[] {ActivityTypes.SWIMMING},
-                new Lesson[] {s11, s12, s13, s21, s22, s23, c31, c32, c33});
+                new Lesson[] {s11, s12, s13, s21, s22, s23, c31, c32, c33}, "maria.jpg");
         coachesManager.addCoach(maria);
 
         Coach nina = new Coach("Nina", "3 avenue crescent", "07974835932",
                 new String[] {ActivityTypes.BASKETBALL},
-                new Lesson[] {b11, b12, b13, b21, b22, b23, b31, b32, b33});
+                new Lesson[] {b11, b12, b13, b21, b22, b23, b31, b32, b33}, "nina.jpg");
         coachesManager.addCoach(nina);
 
         Coach hassan = new Coach("Hassan", "4 random road", "07972084520",
                 new String[] {ActivityTypes.BADMINTON, ActivityTypes.FOOTBALL},
-                new Lesson[] {f13, f23, f33, f43, bm11, bm12, bm21, bm22, bm31});
+                new Lesson[] {f13, f23, f33, f43, bm11, bm12, bm21, bm22, bm31}, "hassan.jpg");
         coachesManager.addCoach(hassan);
 
         Coach demi = new Coach("Demi", "5 long lane", "07983649573",
                 new String[] {ActivityTypes.GYMNASTICS, ActivityTypes.SWIMMING},
-                new Lesson[] {s31, s32, s33, s41, s42, s43, g11, g12, g13});
+                new Lesson[] {s31, s32, s33, s41, s42, s43, g11, g12, g13}, "demi.jpg");
         coachesManager.addCoach(demi);
 
         Coach jeff = new Coach("Jeff", "6 road road", "07983634573",
                 new String[] {ActivityTypes.CRICKET, ActivityTypes.BADMINTON},
-                new Lesson[] {c11, c12, c13, c21, c22, c23, bm13, bm14});
+                new Lesson[] {c11, c12, c13, c21, c22, c23, bm13, bm14}, "jeff.jpg");
         coachesManager.addCoach(jeff);
 
         Coach martha = new Coach("Martha", "7 lane avenue", "07983564573",
                 new String[] {ActivityTypes.CRICKET, ActivityTypes.BADMINTON, ActivityTypes.BASKETBALL},
-                new Lesson[] {c41, c42, c43, bm32, bm41, bm42, b41, b42, b43});
+                new Lesson[] {c41, c42, c43, bm32, bm41, bm42, b41, b42, b43}, "martha.jpg");
         coachesManager.addCoach(martha);
 
         Coach jane = new Coach("Jane", "8 that road", "07983567382",
                 new String[] {ActivityTypes.GYMNASTICS},
-                new Lesson[] {g14, g21, g22, g23, g24, g31, g32, g33, g34});
+                new Lesson[] {g14, g21, g22, g23, g24, g31, g32, g33, g34}, "jane.jpg");
         coachesManager.addCoach(jane);
 
         Coach addi = new Coach("Addi", "9 last avenue", "079835681930",
                 new String[] {ActivityTypes.GYMNASTICS, ActivityTypes.BADMINTON},
-                new Lesson[] {g41, g42, g43, g44, bm23, bm24, bm33, bm34, bm43, bm44});
+                new Lesson[] {g41, g42, g43, g44, bm23, bm24, bm33, bm34, bm43, bm44}, "addi.jpg");
         coachesManager.addCoach(addi);
 
         // appointments

@@ -1,4 +1,4 @@
-package Models.Util.Classes;
+package Models.Util;
 
 import java.util.UUID;
 

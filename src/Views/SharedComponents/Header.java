@@ -56,12 +56,14 @@ public class Header {
 
         JButton home = new JButton("Home");
         home.addActionListener(new Home());
+        home.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         JLabel gap = new JLabel("");
         gap.setBorder(new EmptyBorder(0,0,0,15));
 
         JButton logout = new JButton("Log out");
         logout.addActionListener(new Logout());
+        logout.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         rightCol.add(home);
         rightCol.add(gap);

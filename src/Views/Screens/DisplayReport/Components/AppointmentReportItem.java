@@ -1,7 +1,6 @@
 package Views.Screens.DisplayReport.Components;
 import Models.Event.Appointment;
-import Models.Lesson.Lesson;
-import Models.Util.Classes.TimePeriod;
+import Models.Util.TimePeriod;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

@@ -1,8 +1,8 @@
 package Models.User;
 
 import Models.Lesson.Lesson;
-import Models.Util.Classes.Entity;
-import Models.Util.Classes.TimePeriod;
+import Models.Util.Entity;
+import Models.Util.TimePeriod;
 import Constants.ActivityTypes;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +17,7 @@ class CoachTest {
 
     Coach testCoach = new Coach("Terry", "1 lane road", "07123456789",
             new String[] {ActivityTypes.FOOTBALL},
-            new Lesson[] {f1,b1});
+            new Lesson[] {f1,b1}, "terry");
 
     @Test
     public void testGetLessons(){

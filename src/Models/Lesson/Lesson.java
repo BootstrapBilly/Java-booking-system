@@ -1,7 +1,7 @@
 package Models.Lesson;
 
-import Models.Util.Classes.Entity;
-import Models.Util.Classes.TimePeriod;
+import Models.Util.Entity;
+import Models.Util.TimePeriod;
 
 public class Lesson extends Entity {
 

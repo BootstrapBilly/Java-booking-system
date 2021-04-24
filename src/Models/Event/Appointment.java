@@ -2,7 +2,7 @@ package Models.Event;
 
 import Constants.AppointmentStatus;
 import Models.User.Coach;
-import Models.Util.Classes.TimePeriod;
+import Models.Util.TimePeriod;
 
 import java.util.UUID;
 

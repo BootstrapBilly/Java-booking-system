@@ -1,7 +1,7 @@
 package Data.Managers.ActivityType;
 
 import Constants.ActivityTypes;
-import Models.Util.Classes.Entity;
+import Models.Util.Entity;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

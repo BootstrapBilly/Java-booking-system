@@ -1,6 +1,6 @@
 package Models.User;
 
-import Models.Util.Classes.Entity;
+import Models.Util.Entity;
 
 public class User extends Entity {
     private Boolean isAdmin;

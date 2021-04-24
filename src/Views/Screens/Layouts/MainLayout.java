@@ -3,7 +3,7 @@ package Views.Screens.Layouts;
 import Constants.CardTypes;
 import Models.Event.Appointment;
 import Models.Lesson.Lesson;
-import Models.Util.Classes.Entity;
+import Models.Util.Entity;
 import Views.SharedComponents.AppointmentCard;
 import Views.SharedComponents.LessonCard;
 import Views.SharedComponents.NavigationCard;
@@ -21,6 +21,7 @@ public class MainLayout {
     private JComponent container;
     private JPanel cardDisplayContainer;
     private ArrayList items;
+    private String[] imageUrls;
     private String cardType;
 
     private Header header;
@@ -38,8 +39,9 @@ public class MainLayout {
 
     static GridBagConstraints gbc = new GridBagConstraints();
 
-    public MainLayout(int limitPerRow, ArrayList items, String cardType, Header header, ActionListener itemClickHandler, int rowPadding, int colPadding, boolean scrollable) {
+    public MainLayout(int limitPerRow, ArrayList items, String cardType, Header header, ActionListener itemClickHandler, int rowPadding, int colPadding, boolean scrollable, String... imageUrls) {
         this.items = items;
+        this.imageUrls = imageUrls;
         this.cardType = cardType;
         this.limitPerRow = limitPerRow;
         this.cleanDivide = items.size() % limitPerRow == 0;
@@ -127,7 +129,7 @@ public class MainLayout {
                 currentRow += 1;
             }
 
-            JComponent cell = addCell(itemsIterator);
+            JComponent cell = addCell(itemsIterator, index);
 
             JPanel row = (JPanel) rows.get(currentRow);
             row.add(cell);
@@ -145,7 +147,7 @@ public class MainLayout {
         }
     }
 
-    public JComponent addCell(Iterator it){
+    public JComponent addCell(Iterator it, int index){
 
         JComponent card = null;
 
@@ -161,8 +163,9 @@ public class MainLayout {
                 card = ac.component();
                 break;
             default:
+                String imageUrl = imageUrls.length > index ? imageUrls[index] : "default.png";
                 Entity e = (Entity) it.next();
-                NavigationCard itemCard = new NavigationCard(e.getName(), e.getID(), itemClickHandler,"lessonType.jpg");
+                NavigationCard itemCard = new NavigationCard(e.getName(), e.getID(), itemClickHandler, imageUrl);
                 card = itemCard.component();
         }
 

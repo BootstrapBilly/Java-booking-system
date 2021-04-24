@@ -41,6 +41,7 @@ public class LessonCard {
         container.setBorderPainted(false);
         container.addActionListener(listener);
         container.setName(ID);
+        container.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }
 
     private void addBody(){

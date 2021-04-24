@@ -14,8 +14,8 @@ public class AdminFunctionSelect {
 
         this.container = new TwoPanelSelect(
                 "What would you like to do ?",
-                AdminFunctions.ADD_NEW_STUDENT, "",
-                AdminFunctions.GENERATE_REPORT, "",
+                AdminFunctions.ADD_NEW_STUDENT, "default_large.png",
+                AdminFunctions.GENERATE_REPORT, "reports.jpg",
                 new SelectAdminFunction());
     }
 

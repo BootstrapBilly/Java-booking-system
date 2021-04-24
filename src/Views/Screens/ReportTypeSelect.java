@@ -14,8 +14,8 @@ public class ReportTypeSelect {
 
         this.container = new TwoPanelSelect(
                 "Which type of report ?",
-                ReportTypes.LESSONS_AND_APPOINTMENTS, "",
-                ReportTypes.STUDENT_LESSON_ATTENDANCE, "",
+                ReportTypes.LESSONS_AND_APPOINTMENTS, "reports.jpg",
+                ReportTypes.STUDENT_LESSON_ATTENDANCE, "reports.jpg",
                 new SelectReportType());
     }
 

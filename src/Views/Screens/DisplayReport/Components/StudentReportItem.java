@@ -1,7 +1,7 @@
 package Views.Screens.DisplayReport.Components;
 import Models.Lesson.Lesson;
 import Models.User.Student;
-import Models.Util.Classes.TimePeriod;
+import Models.Util.TimePeriod;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

@@ -8,7 +8,7 @@ import Data.Managers.Session.SessionManager;
 import Data.Managers.Users.UsersManager;
 import Data.Managers.Session.Session;
 import Data.Managers.Users.Users;
-import Models.Util.Classes.Entity;
+import Models.Util.Entity;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

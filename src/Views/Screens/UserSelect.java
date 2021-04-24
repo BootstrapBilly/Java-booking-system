@@ -18,7 +18,7 @@ public class UserSelect {
         StudentsManager students = Students.getInstance();
 
         this.container = new MainLayout(
-                2,
+                3,
                 students.getStudents(),
                 CardTypes.NAVIGATION,
                 new Header(true, "Who are you ?"),

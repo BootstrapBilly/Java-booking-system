@@ -55,7 +55,7 @@ public class FIndEventBy {
                 "By " + COACH ,
                 COACH,
                 new FindEventBy(),
-                "lessonType.jpg");
+                "coaches.jpg");
 
         NavigationCard type = new NavigationCard(
                 "By " + TYPE,

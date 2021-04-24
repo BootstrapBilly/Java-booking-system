@@ -1,4 +1,4 @@
-package Models.Util.Classes;
+package Models.Util;
 
 public class TimePeriod {
 
